@@ -1,0 +1,1676 @@
+2022-10-20 00:54:21,371 INFO     | building dictionary first...
+2022-10-20 00:54:21,373 INFO     | No model with opt yet at: ./checkpoints/all/model(.opt)
+2022-10-20 00:54:21,374 WARNING  | your model is being loaded with opts that do not exist in the model you are initializing the weights with: download_path: None,verbose: False,datapath: ./ParlAI-1.6.0/data,evaltask: blended_skill_talk,msc:Session1Self:is_convai2_session_level=False,msc:SessionBaseMsc:session_id=2,msc:SessionBaseMsc:session_id=3,msc:SessionBaseMsc:session_id=4,msc:NegativeMsc:session_id=6,wizard_of_internet,final_extra_opt: ,eval_batchsize: None,eval_dynamic_batching: None,num_workers: 0,display_examples: False,num_epochs: 50.0,max_train_time: -1,max_train_steps: -1,log_every_n_steps: 180000,validation_every_n_secs: 720000.0,validation_every_n_steps: 3462,save_every_n_secs: 480000.0,save_after_valid: True,validation_every_n_epochs: -1,validation_max_exs: -1,short_final_eval: False,validation_patience: 10,validation_metric: ppl,validation_metric_mode: None,validation_cutoff: 1.0,load_from_checkpoint: True,validation_share_agent: False,metrics: default,aggregate_micro: False,world_logs: ,save_format: conversations,log_keep_fields: all,tensorboard_log: False,tensorboard_logdir: None,wandb_log: False,wandb_name: None,wandb_project: None,wandb_entity: None,dict_maxexs: -1,dict_include_valid: False,dict_include_test: False,log_every_n_secs: 7200.0,max_num_turns: -1,is_convai2_session_level: False,previous_persona_type: raw_history,your_persona_first: False,session_openning: False,label_speaker_id: both,include_time_gap: False,history_time_gaps_token: None,history_person_tokens: None,previous_session_delimiter: None,session_id: 6,mutators: None,include_persona: True,skip_empty_text: True,prepend_gold_knowledge: False,add_skip_search_if_gold_prepended: False,checkpoint_activations: True,regret_dict_file: None,regret_override_index: False,interactive_mode: False,doc_chunk_split_mode: word,woi_doc_chunk_size: 500,skip_search_key: skip_search,add_cleaned_reply_to_history: False
+2022-10-20 00:54:21,374 WARNING  | your model is being loaded with opts that differ from the model you are initializing the weights with. Add the following args to your run command to change this: 
+--task None --multitask-weights 3.0,1.0,1.0,1.0,1.0,1.0,1.0 --batchsize 16 --model-parallel True --n-docs 5 --beam-context-block-ngram 3 --skip-generation False --force-fp16-tokens False --optimizer mem_eff_adam --learningrate 1e-05 --delimiter    --bpe-vocab /private/home/kshuster/ParlAI/data/models/blender/blender_3B/model.dict-vocab.json --bpe-merge /private/home/kshuster/ParlAI/data/models/blender/blender_3B/model.dict-merges.txt --lr-scheduler-patience 3 --splitted-chunk-length 256 --n-ranked-doc-chunks 1 --search-server None --knowledge-access-method classify --gold-document-titles-key select-docs-titles --memory-decoder-model-file zoo:blenderbot2/memory_decoder/model --memory-decoder-beam-min-length 10 --parlai-home /private/home/kshuster/ParlAI
+2022-10-20 00:54:21,380 INFO     | Using CUDA
+2022-10-20 00:54:21,410 INFO     | loading dictionary from ./ParlAI-1.6.0/data/models/blenderbot2/blenderbot2_3B/model.dict
+2022-10-20 00:54:21,437 INFO     | num words = 8008
+2022-10-20 00:55:00,312 INFO     | Creating the search engine retriever.
+2022-10-20 00:55:00,313 WARNING  | No protocol provided, using "http://"
+2022-10-20 00:55:16,349 INFO     | Building Query Generator from file: ./ParlAI-1.6.0/data/models/blenderbot2/query_generator/model
+2022-10-20 00:55:35,663 INFO     | Total parameters: 3,022,943,744 (2,695,613,440 trainable)
+2022-10-20 00:55:35,663 INFO     | Loading existing model params from ./ParlAI-1.6.0/data/models/blenderbot2/blenderbot2_3B/model
+2022-10-20 00:55:44,205 WARNING  | Detected a fine-tune run. Resetting the optimizer.
+2022-10-20 00:55:44,205 WARNING  | Optimizer was reset. Also resetting LR scheduler.
+2022-10-20 00:55:44,379 INFO     | Opt:
+2022-10-20 00:55:44,379 INFO     |     activation: relu
+2022-10-20 00:55:44,379 INFO     |     adafactor_eps: '(1e-30, 0.001)'
+2022-10-20 00:55:44,379 INFO     |     adam_eps: 1e-08
+2022-10-20 00:55:44,379 INFO     |     add_cleaned_reply_to_history: False
+2022-10-20 00:55:44,379 INFO     |     add_p1_after_newln: False
+2022-10-20 00:55:44,379 INFO     |     add_skip_search_if_gold_prepended: False
+2022-10-20 00:55:44,379 INFO     |     aggregate_micro: False
+2022-10-20 00:55:44,379 INFO     |     allow_missing_init_opts: False
+2022-10-20 00:55:44,379 INFO     |     attention_dropout: 0.0
+2022-10-20 00:55:44,379 INFO     |     batchsize: 8
+2022-10-20 00:55:44,379 INFO     |     beam_block_full_context: False
+2022-10-20 00:55:44,379 INFO     |     beam_block_list_filename: None
+2022-10-20 00:55:44,379 INFO     |     beam_block_ngram: 3
+2022-10-20 00:55:44,379 INFO     |     beam_context_block_ngram: -1
+2022-10-20 00:55:44,379 INFO     |     beam_delay: 30
+2022-10-20 00:55:44,379 INFO     |     beam_length_penalty: 0.65
+2022-10-20 00:55:44,379 INFO     |     beam_min_length: 20
+2022-10-20 00:55:44,379 INFO     |     beam_size: 10
+2022-10-20 00:55:44,379 INFO     |     betas: '(0.9, 0.999)'
+2022-10-20 00:55:44,379 INFO     |     bpe_add_prefix_space: None
+2022-10-20 00:55:44,379 INFO     |     bpe_debug: False
+2022-10-20 00:55:44,379 INFO     |     bpe_dropout: None
+2022-10-20 00:55:44,379 INFO     |     bpe_merge: ./ParlAI-1.6.0/data/models/blenderbot2/blenderbot2_3B/model.dict-merges.txt
+2022-10-20 00:55:44,379 INFO     |     bpe_vocab: ./ParlAI-1.6.0/data/models/blenderbot2/blenderbot2_3B/model.dict-vocab.json
+2022-10-20 00:55:44,380 INFO     |     candidates: inline
+2022-10-20 00:55:44,380 INFO     |     cap_num_predictions: 100
+2022-10-20 00:55:44,380 INFO     |     checkpoint_activations: True
+2022-10-20 00:55:44,380 INFO     |     codes_attention_num_heads: 4
+2022-10-20 00:55:44,380 INFO     |     codes_attention_type: basic
+2022-10-20 00:55:44,380 INFO     |     compressed_indexer_factory: IVF4096_HNSW128,PQ128
+2022-10-20 00:55:44,380 INFO     |     compressed_indexer_gpu_train: False
+2022-10-20 00:55:44,380 INFO     |     compressed_indexer_nprobe: 64
+2022-10-20 00:55:44,380 INFO     |     compute_tokenized_bleu: False
+2022-10-20 00:55:44,380 INFO     |     converting: False
+2022-10-20 00:55:44,380 INFO     |     data_parallel: False
+2022-10-20 00:55:44,380 INFO     |     datapath: ./ParlAI-1.6.0/data
+2022-10-20 00:55:44,380 INFO     |     datatype: train:stream
+2022-10-20 00:55:44,380 INFO     |     delimiter: '\n'
+2022-10-20 00:55:44,380 INFO     |     dict_class: parlai.core.dict:DictionaryAgent
+2022-10-20 00:55:44,380 INFO     |     dict_endtoken: __end__
+2022-10-20 00:55:44,380 INFO     |     dict_file: ./ParlAI-1.6.0/data/models/blenderbot2/blenderbot2_3B/model.dict
+2022-10-20 00:55:44,380 INFO     |     dict_include_test: False
+2022-10-20 00:55:44,380 INFO     |     dict_include_valid: False
+2022-10-20 00:55:44,380 INFO     |     dict_initpath: None
+2022-10-20 00:55:44,380 INFO     |     dict_language: english
+2022-10-20 00:55:44,380 INFO     |     dict_loaded: True
+2022-10-20 00:55:44,380 INFO     |     dict_lower: False
+2022-10-20 00:55:44,380 INFO     |     dict_max_ngram_size: -1
+2022-10-20 00:55:44,380 INFO     |     dict_maxexs: -1
+2022-10-20 00:55:44,380 INFO     |     dict_maxtokens: -1
+2022-10-20 00:55:44,380 INFO     |     dict_minfreq: 0
+2022-10-20 00:55:44,380 INFO     |     dict_nulltoken: __null__
+2022-10-20 00:55:44,380 INFO     |     dict_starttoken: __start__
+2022-10-20 00:55:44,380 INFO     |     dict_textfields: text,labels
+2022-10-20 00:55:44,380 INFO     |     dict_tokenizer: bytelevelbpe
+2022-10-20 00:55:44,380 INFO     |     dict_unktoken: __unk__
+2022-10-20 00:55:44,380 INFO     |     display_examples: False
+2022-10-20 00:55:44,380 INFO     |     doc_chunk_split_mode: word
+2022-10-20 00:55:44,380 INFO     |     doc_chunks_ranker: head
+2022-10-20 00:55:44,380 INFO     |     download_path: None
+2022-10-20 00:55:44,380 INFO     |     dpr_model_file: zoo:hallucination/bart_rag_token/model
+2022-10-20 00:55:44,380 INFO     |     dpr_num_docs: 25
+2022-10-20 00:55:44,380 INFO     |     dropout: 0.0
+2022-10-20 00:55:44,380 INFO     |     dynamic_batching: None
+2022-10-20 00:55:44,380 INFO     |     embedding_projection: random
+2022-10-20 00:55:44,380 INFO     |     embedding_size: 2560
+2022-10-20 00:55:44,380 INFO     |     embedding_type: random
+2022-10-20 00:55:44,380 INFO     |     embeddings_scale: True
+2022-10-20 00:55:44,380 INFO     |     encode_candidate_vecs: True
+2022-10-20 00:55:44,380 INFO     |     encode_candidate_vecs_batchsize: 256
+2022-10-20 00:55:44,380 INFO     |     eval_batchsize: None
+2022-10-20 00:55:44,380 INFO     |     eval_candidates: inline
+2022-10-20 00:55:44,381 INFO     |     eval_dynamic_batching: None
+2022-10-20 00:55:44,381 INFO     |     evaltask: blended_skill_talk,msc:Session1Self:is_convai2_session_level=False,msc:SessionBaseMsc:session_id=2,msc:SessionBaseMsc:session_id=3,msc:SessionBaseMsc:session_id=4,msc:NegativeMsc:session_id=6,wizard_of_internet
+2022-10-20 00:55:44,381 INFO     |     ffn_size: 10240
+2022-10-20 00:55:44,381 INFO     |     final_extra_opt: 
+2022-10-20 00:55:44,381 INFO     |     fixed_candidate_vecs: reuse
+2022-10-20 00:55:44,381 INFO     |     fixed_candidates_path: None
+2022-10-20 00:55:44,381 INFO     |     force_fp16_tokens: True
+2022-10-20 00:55:44,381 INFO     |     fp16: True
+2022-10-20 00:55:44,381 INFO     |     fp16_impl: mem_efficient
+2022-10-20 00:55:44,381 INFO     |     generation_model: transformer/generator
+2022-10-20 00:55:44,381 INFO     |     gold_document_key: __selected-docs__
+2022-10-20 00:55:44,381 INFO     |     gold_document_titles_key: __select-docs-titles__
+2022-10-20 00:55:44,381 INFO     |     gold_knowledge_passage_key: checked_sentence
+2022-10-20 00:55:44,381 INFO     |     gold_knowledge_title_key: title
+2022-10-20 00:55:44,381 INFO     |     gold_sentence_key: __selected-sentences__
+2022-10-20 00:55:44,381 INFO     |     gpu: -1
+2022-10-20 00:55:44,381 INFO     |     gradient_clip: 0.1
+2022-10-20 00:55:44,381 INFO     |     hide_labels: False
+2022-10-20 00:55:44,381 INFO     |     history_add_global_end_token: end
+2022-10-20 00:55:44,381 INFO     |     history_person_tokens: None
+2022-10-20 00:55:44,381 INFO     |     history_reversed: False
+2022-10-20 00:55:44,381 INFO     |     history_size: -1
+2022-10-20 00:55:44,381 INFO     |     history_time_gaps_token: None
+2022-10-20 00:55:44,381 INFO     |     hnsw_ef_construction: 200
+2022-10-20 00:55:44,381 INFO     |     hnsw_ef_search: 128
+2022-10-20 00:55:44,381 INFO     |     hnsw_indexer_store_n: 128
+2022-10-20 00:55:44,381 INFO     |     ignore_bad_candidates: False
+2022-10-20 00:55:44,381 INFO     |     image_cropsize: 224
+2022-10-20 00:55:44,381 INFO     |     image_mode: raw
+2022-10-20 00:55:44,381 INFO     |     image_size: 256
+2022-10-20 00:55:44,381 INFO     |     include_persona: True
+2022-10-20 00:55:44,381 INFO     |     include_time_gap: False
+2022-10-20 00:55:44,381 INFO     |     indexer_buffer_size: 65536
+2022-10-20 00:55:44,381 INFO     |     indexer_type: compressed
+2022-10-20 00:55:44,381 INFO     |     inference: beam
+2022-10-20 00:55:44,381 INFO     |     init_model: ./ParlAI-1.6.0/data/models/blenderbot2/blenderbot2_3B/model
+2022-10-20 00:55:44,381 INFO     |     init_opt: None
+2022-10-20 00:55:44,381 INFO     |     insert_gold_docs: True
+2022-10-20 00:55:44,381 INFO     |     interactive_candidates: fixed
+2022-10-20 00:55:44,381 INFO     |     interactive_mode: False
+2022-10-20 00:55:44,381 INFO     |     invsqrt_lr_decay_gamma: -1
+2022-10-20 00:55:44,381 INFO     |     is_convai2_session_level: False
+2022-10-20 00:55:44,381 INFO     |     is_debug: False
+2022-10-20 00:55:44,381 INFO     |     knowledge_access_method: memory_only
+2022-10-20 00:55:44,381 INFO     |     label_speaker_id: both
+2022-10-20 00:55:44,381 INFO     |     label_truncate: 128
+2022-10-20 00:55:44,381 INFO     |     learn_embeddings: True
+2022-10-20 00:55:44,381 INFO     |     learn_positional_embeddings: False
+2022-10-20 00:55:44,381 INFO     |     learningrate: 5e-06
+2022-10-20 00:55:44,381 INFO     |     load_from_checkpoint: True
+2022-10-20 00:55:44,381 INFO     |     log_every_n_secs: 7200.0
+2022-10-20 00:55:44,381 INFO     |     log_every_n_steps: 180000
+2022-10-20 00:55:44,381 INFO     |     log_keep_fields: all
+2022-10-20 00:55:44,381 INFO     |     loglevel: info
+2022-10-20 00:55:44,381 INFO     |     lr_scheduler: reduceonplateau
+2022-10-20 00:55:44,381 INFO     |     lr_scheduler_decay: 0.5
+2022-10-20 00:55:44,381 INFO     |     lr_scheduler_patience: 100
+2022-10-20 00:55:44,382 INFO     |     max_doc_token_length: 64
+2022-10-20 00:55:44,382 INFO     |     max_num_turns: -1
+2022-10-20 00:55:44,382 INFO     |     max_train_steps: -1
+2022-10-20 00:55:44,382 INFO     |     max_train_time: -1
+2022-10-20 00:55:44,382 INFO     |     memory_attention: sqrt
+2022-10-20 00:55:44,382 INFO     |     memory_decoder_beam_min_length: 3
+2022-10-20 00:55:44,382 INFO     |     memory_decoder_beam_size: 3
+2022-10-20 00:55:44,382 INFO     |     memory_decoder_delimiter: '\n'
+2022-10-20 00:55:44,382 INFO     |     memory_decoder_ignore_phrase: persona:
+2022-10-20 00:55:44,382 INFO     |     memory_decoder_key: full_text
+2022-10-20 00:55:44,382 INFO     |     memory_decoder_model_file: 
+2022-10-20 00:55:44,382 INFO     |     memory_decoder_one_line_memories: False
+2022-10-20 00:55:44,382 INFO     |     memory_decoder_truncate: -1
+2022-10-20 00:55:44,382 INFO     |     memory_doc_title_delimiter: ' / '
+2022-10-20 00:55:44,382 INFO     |     memory_extractor_phrase: persona:
+2022-10-20 00:55:44,382 INFO     |     memory_key: personas
+2022-10-20 00:55:44,382 INFO     |     memory_reader_model: None
+2022-10-20 00:55:44,382 INFO     |     memory_retriever_truncate: -1
+2022-10-20 00:55:44,382 INFO     |     memory_writer_model: bert
+2022-10-20 00:55:44,382 INFO     |     memory_writer_model_file: zoo:hallucination/multiset_dpr/hf_bert_base.cp
+2022-10-20 00:55:44,382 INFO     |     metrics: default
+2022-10-20 00:55:44,382 INFO     |     min_doc_token_length: 64
+2022-10-20 00:55:44,382 INFO     |     model: projects.blenderbot2.agents.blenderbot2:BlenderBot2FidAgent
+2022-10-20 00:55:44,382 INFO     |     model_file: ./checkpoints/all/model
+2022-10-20 00:55:44,382 INFO     |     model_parallel: False
+2022-10-20 00:55:44,382 INFO     |     momentum: 0
+2022-10-20 00:55:44,382 INFO     |     multitask_weights: [1]
+2022-10-20 00:55:44,382 INFO     |     mutators: None
+2022-10-20 00:55:44,382 INFO     |     n_decoder_layers: 24
+2022-10-20 00:55:44,382 INFO     |     n_docs: 30
+2022-10-20 00:55:44,382 INFO     |     n_encoder_layers: 2
+2022-10-20 00:55:44,382 INFO     |     n_extra_positions: 0
+2022-10-20 00:55:44,382 INFO     |     n_heads: 32
+2022-10-20 00:55:44,382 INFO     |     n_layers: 2
+2022-10-20 00:55:44,382 INFO     |     n_positions: 128
+2022-10-20 00:55:44,382 INFO     |     n_ranked_doc_chunks: 2
+2022-10-20 00:55:44,382 INFO     |     n_segments: 0
+2022-10-20 00:55:44,382 INFO     |     nesterov: True
+2022-10-20 00:55:44,382 INFO     |     no_cuda: False
+2022-10-20 00:55:44,382 INFO     |     normalize_sent_emb: False
+2022-10-20 00:55:44,382 INFO     |     num_epochs: 50.0
+2022-10-20 00:55:44,382 INFO     |     num_workers: 0
+2022-10-20 00:55:44,382 INFO     |     nus: (0.7,)
+2022-10-20 00:55:44,382 INFO     |     optimizer: adafactor
+2022-10-20 00:55:44,382 INFO     |     output_scaling: 1.0
+2022-10-20 00:55:44,382 INFO     |     override: "{'model': 'projects.blenderbot2.agents.blenderbot2:BlenderBot2FidAgent', 'num_epochs': 50.0, 'query_model': 'bert_from_parlai_rag', 'generation_model': 'transformer/generator', 'rag_model_type': 'token', 'rag_retriever_type': 'search_engine', 'search_server': 'None', 'dpr_model_file': 'zoo:hallucination/bart_rag_token/model', 'gold_document_titles_key': '__select-docs-titles__', 'insert_gold_docs': True, 'model_parallel': False, 'inference': 'beam', 'learningrate': 5e-06, 'memory_key': 'personas', 'memory_decoder_beam_min_length': 3, 'search_query_generator_model_file': 'zoo:blenderbot2/query_generator/model', 'search_query_generator_beam_min_length': 2, 'knowledge_access_method': 'memory_only', 'fp16': True, 'fp16_impl': 'mem_efficient', 'force_fp16_tokens': True, 'lr_scheduler_patience': 100, 'embedding_size': 2560, 'ffn_size': 10240, 'dropout': 0.0, 'attention_dropout': 0.0, 'n_heads': 32, 'learn_positional_embeddings': False, 'embeddings_scale': True, 'n_positions': 128, 'variant': 'prelayernorm', 'activation': 'relu', 'n_encoder_layers': 2, 'n_decoder_layers': 24, 'beam_size': 10, 'beam_min_length': 20, 'beam_context_block_ngram': -1, 'beam_block_ngram': 3, 'history_add_global_end_token': 'end', 'dict_tokenizer': 'bytelevelbpe', 'dict_file': './ParlAI-1.6.0/data/models/blenderbot2/blenderbot2_3B/model.dict', 'bpe_vocab': './ParlAI-1.6.0/data/models/blenderbot2/blenderbot2_3B/model.dict-vocab.json', 'bpe_merge': './ParlAI-1.6.0/data/models/blenderbot2/blenderbot2_3B/model.dict-merges.txt', 'beam_block_full_context': False, 'warmup_updates': 100, 'skip_generation': True, 'checkpoint_activations': True, 'truncate': 128, 'text_truncate': 128, 'label_truncate': 128, 'min_doc_token_length': 64, 'max_doc_token_length': 64, 'validation_metric': 'ppl', 'n_docs': 30, 'n_ranked_doc_chunks': 2, 'splitted_chunk_length': 64, 'doc_chunks_ranker': 'head', 'save_every_n_secs': 480000.0, 'validation_every_n_secs': 720000.0, 'evaltask': 'blended_skill_talk,msc:Session1Self:is_convai2_session_level=False,msc:SessionBaseMsc:session_id=2,msc:SessionBaseMsc:session_id=3,msc:SessionBaseMsc:session_id=4,msc:NegativeMsc:session_id=6,wizard_of_internet', 'log_every_n_steps': 180000, 'update_freq': 1, 'save_after_valid': True, 'datatype': 'train:stream', 'log_every_n_secs': 7200.0, 'memory_decoder_model_file': '', 'init_model': './ParlAI-1.6.0/data/models/blenderbot2/blenderbot2_3B/model', 'task': 'blended_skill_talk,msc:Session1Self:is_convai2_session_level=False,msc:SessionBaseMsc:session_id=2,msc:SessionBaseMsc:session_id=3,msc:SessionBaseMsc:session_id=4,msc:NegativeMsc:session_id=6,wizard_of_internet', 'validation_every_n_steps': 3462, 'optimizer': 'adafactor', 'batchsize': 8, 'model_file': './checkpoints/all/model'}"
+2022-10-20 00:55:44,382 INFO     |     parlai_home: /scratch/20202939/chatbot/EACL/ParlAI-1.6.0
+2022-10-20 00:55:44,382 INFO     |     path_to_dense_embeddings: None
+2022-10-20 00:55:44,382 INFO     |     path_to_dpr_passages: zoo:hallucination/wiki_passages/psgs_w100.tsv
+2022-10-20 00:55:44,382 INFO     |     path_to_index: zoo:hallucination/wiki_index_compressed/compressed_pq
+2022-10-20 00:55:44,382 INFO     |     person_tokens: False
+2022-10-20 00:55:44,383 INFO     |     poly_attention_num_heads: 4
+2022-10-20 00:55:44,383 INFO     |     poly_attention_type: basic
+2022-10-20 00:55:44,383 INFO     |     poly_faiss_model_file: None
+2022-10-20 00:55:44,383 INFO     |     poly_n_codes: 64
+2022-10-20 00:55:44,383 INFO     |     poly_score_initial_lambda: 0.5
+2022-10-20 00:55:44,383 INFO     |     polyencoder_init_model: wikito
+2022-10-20 00:55:44,383 INFO     |     polyencoder_type: codes
+2022-10-20 00:55:44,383 INFO     |     prepend_gold_knowledge: False
+2022-10-20 00:55:44,383 INFO     |     previous_persona_type: raw_history
+2022-10-20 00:55:44,383 INFO     |     previous_session_delimiter: None
+2022-10-20 00:55:44,383 INFO     |     print_docs: False
+2022-10-20 00:55:44,383 INFO     |     query_generator_beam_min_length: 2
+2022-10-20 00:55:44,383 INFO     |     query_generator_beam_size: 1
+2022-10-20 00:55:44,383 INFO     |     query_generator_delimiter: '\n'
+2022-10-20 00:55:44,383 INFO     |     query_generator_ignore_phrase: persona:
+2022-10-20 00:55:44,383 INFO     |     query_generator_inference: beam
+2022-10-20 00:55:44,383 INFO     |     query_generator_key: full_text
+2022-10-20 00:55:44,383 INFO     |     query_generator_model_file: zoo:blenderbot2/query_generator/model
+2022-10-20 00:55:44,383 INFO     |     query_generator_truncate: -1
+2022-10-20 00:55:44,383 INFO     |     query_model: bert_from_parlai_rag
+2022-10-20 00:55:44,383 INFO     |     rag_model_type: token
+2022-10-20 00:55:44,383 INFO     |     rag_query_truncate: 512
+2022-10-20 00:55:44,383 INFO     |     rag_retriever_query: full_history
+2022-10-20 00:55:44,383 INFO     |     rag_retriever_type: search_engine
+2022-10-20 00:55:44,383 INFO     |     rag_turn_discount_factor: 1.0
+2022-10-20 00:55:44,383 INFO     |     rag_turn_marginalize: doc_then_turn
+2022-10-20 00:55:44,383 INFO     |     rag_turn_n_turns: 2
+2022-10-20 00:55:44,383 INFO     |     rank_candidates: False
+2022-10-20 00:55:44,383 INFO     |     rank_top_k: -1
+2022-10-20 00:55:44,383 INFO     |     reduction_type: mean
+2022-10-20 00:55:44,383 INFO     |     regret: False
+2022-10-20 00:55:44,383 INFO     |     regret_dict_file: None
+2022-10-20 00:55:44,383 INFO     |     regret_intermediate_maxlen: 32
+2022-10-20 00:55:44,383 INFO     |     regret_model_file: None
+2022-10-20 00:55:44,383 INFO     |     regret_override_index: False
+2022-10-20 00:55:44,383 INFO     |     relu_dropout: 0.0
+2022-10-20 00:55:44,383 INFO     |     repeat_blocking_heuristic: True
+2022-10-20 00:55:44,383 INFO     |     retriever_debug_index: None
+2022-10-20 00:55:44,383 INFO     |     retriever_delimiter: '\n'
+2022-10-20 00:55:44,383 INFO     |     retriever_embedding_size: 768
+2022-10-20 00:55:44,383 INFO     |     retriever_ignore_phrase: persona:
+2022-10-20 00:55:44,383 INFO     |     return_cand_scores: False
+2022-10-20 00:55:44,383 INFO     |     save_after_valid: True
+2022-10-20 00:55:44,383 INFO     |     save_every_n_secs: 480000.0
+2022-10-20 00:55:44,383 INFO     |     save_format: conversations
+2022-10-20 00:55:44,383 INFO     |     search_query_generator_beam_min_length: 2
+2022-10-20 00:55:44,383 INFO     |     search_query_generator_beam_size: 1
+2022-10-20 00:55:44,383 INFO     |     search_query_generator_inference: greedy
+2022-10-20 00:55:44,383 INFO     |     search_query_generator_model_file: zoo:blenderbot2/query_generator/model
+2022-10-20 00:55:44,383 INFO     |     search_query_generator_text_truncate: 512
+2022-10-20 00:55:44,383 INFO     |     search_server: None
+2022-10-20 00:55:44,383 INFO     |     session_id: 6
+2022-10-20 00:55:44,383 INFO     |     session_openning: False
+2022-10-20 00:55:44,384 INFO     |     share_encoders: True
+2022-10-20 00:55:44,384 INFO     |     share_search_and_memory_query_encoder: False
+2022-10-20 00:55:44,384 INFO     |     share_word_embeddings: True
+2022-10-20 00:55:44,384 INFO     |     short_final_eval: False
+2022-10-20 00:55:44,384 INFO     |     skip_empty_text: True
+2022-10-20 00:55:44,384 INFO     |     skip_generation: True
+2022-10-20 00:55:44,384 INFO     |     skip_retrieval_token: no_passages_used
+2022-10-20 00:55:44,384 INFO     |     skip_search_key: skip_search
+2022-10-20 00:55:44,384 INFO     |     special_tok_lst: None
+2022-10-20 00:55:44,384 INFO     |     split_lines: False
+2022-10-20 00:55:44,384 INFO     |     splitted_chunk_length: 64
+2022-10-20 00:55:44,384 INFO     |     starttime: Oct20_00-54
+2022-10-20 00:55:44,384 INFO     |     t5_dropout: 0.0
+2022-10-20 00:55:44,384 INFO     |     t5_generation_config: None
+2022-10-20 00:55:44,384 INFO     |     t5_model_arch: t5-base
+2022-10-20 00:55:44,384 INFO     |     t5_model_parallel: False
+2022-10-20 00:55:44,384 INFO     |     task: blended_skill_talk,msc:Session1Self:is_convai2_session_level=False,msc:SessionBaseMsc:session_id=2,msc:SessionBaseMsc:session_id=3,msc:SessionBaseMsc:session_id=4,msc:NegativeMsc:session_id=6,wizard_of_internet
+2022-10-20 00:55:44,384 INFO     |     temperature: 1.0
+2022-10-20 00:55:44,384 INFO     |     tensorboard_log: False
+2022-10-20 00:55:44,384 INFO     |     tensorboard_logdir: None
+2022-10-20 00:55:44,384 INFO     |     text_truncate: 128
+2022-10-20 00:55:44,384 INFO     |     tfidf_max_doc_paragraphs: -1
+2022-10-20 00:55:44,384 INFO     |     tfidf_model_path: zoo:wikipedia_full/tfidf_retriever/model
+2022-10-20 00:55:44,384 INFO     |     thorough: False
+2022-10-20 00:55:44,384 INFO     |     topk: 10
+2022-10-20 00:55:44,384 INFO     |     topp: 0.9
+2022-10-20 00:55:44,384 INFO     |     train_predict: False
+2022-10-20 00:55:44,384 INFO     |     truncate: 128
+2022-10-20 00:55:44,384 INFO     |     update_freq: 1
+2022-10-20 00:55:44,384 INFO     |     use_memories: False
+2022-10-20 00:55:44,384 INFO     |     use_reply: label
+2022-10-20 00:55:44,384 INFO     |     validation_cutoff: 1.0
+2022-10-20 00:55:44,384 INFO     |     validation_every_n_epochs: -1
+2022-10-20 00:55:44,384 INFO     |     validation_every_n_secs: 720000.0
+2022-10-20 00:55:44,384 INFO     |     validation_every_n_steps: 3462
+2022-10-20 00:55:44,384 INFO     |     validation_max_exs: -1
+2022-10-20 00:55:44,384 INFO     |     validation_metric: ppl
+2022-10-20 00:55:44,384 INFO     |     validation_metric_mode: None
+2022-10-20 00:55:44,384 INFO     |     validation_patience: 10
+2022-10-20 00:55:44,384 INFO     |     validation_share_agent: False
+2022-10-20 00:55:44,384 INFO     |     variant: prelayernorm
+2022-10-20 00:55:44,384 INFO     |     verbose: False
+2022-10-20 00:55:44,384 INFO     |     wandb_entity: None
+2022-10-20 00:55:44,384 INFO     |     wandb_log: False
+2022-10-20 00:55:44,384 INFO     |     wandb_name: None
+2022-10-20 00:55:44,384 INFO     |     wandb_project: None
+2022-10-20 00:55:44,384 INFO     |     warmup_rate: 0.0001
+2022-10-20 00:55:44,384 INFO     |     warmup_updates: 100
+2022-10-20 00:55:44,384 INFO     |     weight_decay: None
+2022-10-20 00:55:44,384 INFO     |     woi_doc_chunk_size: 500
+2022-10-20 00:55:44,384 INFO     |     world_logs: 
+2022-10-20 00:55:44,384 INFO     |     wrap_memory_encoder: False
+2022-10-20 00:55:44,384 INFO     |     your_persona_first: False
+2022-10-20 00:55:45,072 INFO     | creating task(s): blended_skill_talk,msc:Session1Self:is_convai2_session_level=False,msc:SessionBaseMsc:session_id=2,msc:SessionBaseMsc:session_id=3,msc:SessionBaseMsc:session_id=4,msc:NegativeMsc:session_id=6,wizard_of_internet
+2022-10-20 00:55:45,101 INFO     | Loading ParlAI text data: ./ParlAI-1.6.0/data/blended_skill_talk/train.txt
+all_samples len: 27018
+2022-10-20 00:55:46,010 INFO     | training...
+2022-10-20 00:55:46,515 INFO     | Overflow: setting loss scale to 65536.0
+2022-10-20 00:55:46,905 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/train_self_original.txt
+2022-10-20 00:55:46,905 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/train_self_original.txt
+CONV: 131438
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+46420
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+47259
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+11870
+2022-10-20 00:56:28,994 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/train.jsonl ...
+WOI: 41476
+2022-10-20 00:56:57,981 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/train_self_original.txt
+2022-10-20 00:56:57,981 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/train_self_original.txt
+CONV: 131438
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+46420
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+47259
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+11870
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+7915
+2022-10-20 00:57:46,586 INFO     | Overflow: setting loss scale to 32768.0
+2022-10-20 00:57:46,945 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/train.jsonl ...
+WOI: 41476
+2022-10-20 00:58:19,803 INFO     | Overflow: setting loss scale to 16384.0
+2022-10-20 00:58:25,901 INFO     | Overflow: setting loss scale to 8192.0
+2022-10-20 00:58:32,476 INFO     | Overflow: setting loss scale to 4096.0
+2022-10-20 00:58:44,467 INFO     | Overflow: setting loss scale to 2048.0
+2022-10-20 00:58:50,486 INFO     | Overflow: setting loss scale to 1024.0
+2022-10-20 00:58:56,775 INFO     | Overflow: setting loss scale to 512.0
+2022-10-20 00:59:21,295 INFO     | Overflow: setting loss scale to 256.0
+2022-10-20 00:59:59,744 INFO     | Overflow: setting loss scale to 128.0
+2022-10-20 01:01:05,330 INFO     | Overflow: setting loss scale to 64.0
+2022-10-20 01:09:17,945 INFO     | Overflow: setting loss scale to 32.0
+2022-10-20 01:41:12,099 INFO     | Overflow: setting loss scale to 32.0
+2022-10-20 01:43:22,804 INFO     | Overflow: setting loss scale to 16.0
+2022-10-20 01:58:17,062 INFO     | Overflow: setting loss scale to 8.0
+2022-10-20 01:59:22,204 INFO     | Overflow: setting loss scale to 4.0
+2022-10-20 02:00:28,462 INFO     | time:3834s total_exs:27696 total_steps:3462 epochs:0.09 time_left:2165601s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher 127.7                     .4150      35.73        3952   
+   all                      447.2 .9954   941 849.6   .7825      329.6 7.223 27696   
+   blended_skill_talk       180.3                     .6866       62.8        3960   
+   msc:Session1Self         168.4                     .6684      52.64        3960   
+   msc_dialogue_2           400.9                         1      272.9        3960   
+   msc_dialogue_3           795.8                         1      667.8        3960   
+   msc_dialogue_4            1213                         1       1085        3952   
+   msc_dialogue_6           244.9                     .7075      130.7        3952   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   21.25  2.06            
+   all                                  275.4  10.37    .6059 24.51 2.039 4.95e-06   
+   blended_skill_talk                                         18.99 2.175            
+   msc:Session1Self                                           13.95 2.254            
+   msc_dialogue_2                                             31.45 2.056            
+   msc_dialogue_3                                             32.94  2.09            
+   msc_dialogue_4                                             32.28 1.794            
+   msc_dialogue_6                                             20.74 1.843            
+                             ltpb  ltps   ltrunc  ltrunclen  mle_ppl   ppl  token_acc  \
+   WizInternetWizardTeacher              .000253    .000253    9.861 7.848      .5323   
+   all                      196.1   177 .0003249    .003356    11.75 7.772      .5195   
+   blended_skill_talk                          0          0    11.14 8.802      .4931   
+   msc:Session1Self                            0          0    23.65 9.527      .4848   
+   msc_dialogue_2                       .0007576    .008081    9.633 7.814      .5082   
+   msc_dialogue_3                       .0007576     .01288    11.09 8.085      .5047   
+   msc_dialogue_4                       .0005061    .002277    8.158 6.014      .5613   
+   msc_dialogue_6                              0          0    8.739 6.312      .5520   
+                             token_em  total_train_updates  tpb  tps  ul_loss  ul_ppl  \
+   WizInternetWizardTeacher   .000253                                                   
+   all                       .0002889                 3462 1137 1027      1.2    7.89   
+   blended_skill_talk               0                                                   
+   msc:Session1Self            .00101                                                   
+   msc_dialogue_2                   0                                                   
+   msc_dialogue_3                   0                                                   
+   msc_dialogue_4                   0                                                   
+   msc_dialogue_6            .0007591                                     1.2    7.89   
+                              ups  
+   WizInternetWizardTeacher        
+   all                      .9029  
+   blended_skill_talk              
+   msc:Session1Self                
+   msc_dialogue_2                  
+   msc_dialogue_3                  
+   msc_dialogue_4                  
+   msc_dialogue_6
+
+2022-10-20 02:00:28,463 INFO     | creating task(s): blended_skill_talk
+2022-10-20 02:00:28,634 INFO     | Loading ParlAI text data: ./ParlAI-1.6.0/data/blended_skill_talk/valid.txt
+all_samples len: 5651
+2022-10-20 02:00:31,304 INFO     | creating task(s): msc:Session1Self:is_convai2_session_level=False
+2022-10-20 02:00:32,713 INFO     | creating task(s): msc:SessionBaseMsc:session_id=2
+2022-10-20 02:00:34,081 INFO     | creating task(s): msc:SessionBaseMsc:session_id=3
+2022-10-20 02:00:35,324 INFO     | creating task(s): msc:SessionBaseMsc:session_id=4
+2022-10-20 02:00:36,642 INFO     | creating task(s): msc:NegativeMsc:session_id=6
+2022-10-20 02:00:37,940 INFO     | creating task(s): wizard_of_internet
+2022-10-20 02:00:39,368 INFO     | running eval: valid
+2022-10-20 02:00:39,729 WARNING  | --skip-generation true produces limited metrics
+2022-10-20 02:04:43,482 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 02:04:43,482 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+2022-10-20 02:04:47,203 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 02:04:47,204 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+5897
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+5890
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+5904
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+839
+2022-10-20 02:38:28,562 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 02:38:40,630 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 02:43:00,890 INFO     | eval completed in 2541.52s
+2022-10-20 02:43:00,890 REPORT   | valid:
+                             clen  ctpb  ctps  ctrunc  ctrunclen  exps   exs  gpu_mem  \
+   WizInternetWizardTeacher 162.3               .5429      62.98        2881            
+   all                      458.6 940.8  2725   .8023      339.7 23.15 34863    .5458   
+   blended_skill_talk         181               .6944      63.33        5651            
+   msc:Session1Self         182.6               .7182      63.81        7801            
+   msc_dialogue_2             424                   1        296        5897            
+   msc_dialogue_3           816.6                   1      688.6        5890            
+   msc_dialogue_4            1212                   1       1084        5904            
+   msc_dialogue_6           231.8               .6603      119.1         839            
+                             llen  loss       lr  ltpb  ltps   ltrunc  ltrunclen  \
+   WizInternetWizardTeacher 27.05 2.307                        .00243      .1184   
+   all                      25.01 2.248 4.95e-06 153.3 444.1 .0005408     .02013   
+   blended_skill_talk       19.18 2.385                             0          0   
+   msc:Session1Self         14.41 2.346                             0          0   
+   msc_dialogue_2           31.52  2.25                      .0006783     .01543   
+   msc_dialogue_3           31.57  2.24                      .0001698    .005433   
+   msc_dialogue_4           32.38 2.256                      .0005081    .001694   
+   msc_dialogue_6           18.96 1.949                             0          0   
+                             mle_ppl   ppl  token_acc  token_em  total_train_updates  \
+   WizInternetWizardTeacher    12.25 10.05      .4911         0                        
+   all                         12.91 9.543      .4866 4.359e-05                 3462   
+   blended_skill_talk          14.22 10.86      .4636   .000177                        
+   msc:Session1Self            17.24 10.44      .4761  .0001282                        
+   msc_dialogue_2              12.16 9.492      .4790         0                        
+   msc_dialogue_3              12.08 9.396      .4778         0                        
+   msc_dialogue_4              12.66 9.546      .4748         0                        
+   msc_dialogue_6              9.754 7.019      .5438         0                        
+                             tpb  tps  ul_loss  ul_ppl  
+   WizInternetWizardTeacher                             
+   all                      1094 3169    1.142   8.304  
+   blended_skill_talk                                   
+   msc:Session1Self                                     
+   msc_dialogue_2                                       
+   msc_dialogue_3                                       
+   msc_dialogue_4                                       
+   msc_dialogue_6                        1.142   8.304
+
+2022-10-20 02:43:00,890 SUCCESS  | new best ppl: 9.543
+2022-10-20 02:43:00,890 INFO     | saving best valid model: ./checkpoints/all/model
+2022-10-20 02:43:00,939 INFO     | Saving dictionary to ./checkpoints/all/model.dict
+2022-10-20 02:48:09,437 INFO     | saving model checkpoint: ./checkpoints/all/model.checkpoint
+2022-10-20 02:48:09,444 INFO     | Saving dictionary to ./checkpoints/all/model.checkpoint.dict
+2022-10-20 03:49:11,072 INFO     | Overflow: setting loss scale to 4.0
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+7915
+2022-10-20 04:14:20,114 INFO     | time:11914s total_exs:55392 total_steps:6924 epochs:0.18 time_left:3358453s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher   131                     .4202      38.48        3960   
+   all                      447.1 .9997 942.3 652.8   .7848      329.4 5.542 27696   
+   blended_skill_talk       177.4                     .6806       60.5        3960   
+   msc:Session1Self         167.7                     .6612      52.07        3952   
+   msc_dialogue_2           399.3                         1      271.3        3952   
+   msc_dialogue_3           790.7                         1      662.7        3952   
+   msc_dialogue_4            1213                         1       1085        3960   
+   msc_dialogue_6           251.2                     .7316      135.7        3960   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   21.73  2.05            
+   all                                  4.318  10.59    .6060 24.63  2.03 4.95e-06   
+   blended_skill_talk                                         19.05 2.152            
+   msc:Session1Self                                           13.87 2.218            
+   msc_dialogue_2                                             31.65 2.073            
+   msc_dialogue_3                                             32.58 2.092            
+   msc_dialogue_4                                             32.31 1.788            
+   msc_dialogue_6                                             21.21 1.836            
+                             ltpb  ltps   ltrunc  ltrunclen  mle_ppl   ppl  token_acc  \
+   WizInternetWizardTeacher                    0          0    9.919 7.767      .5354   
+   all                        197 136.5 .0001084    .001012    9.845 7.694      .5219   
+   blended_skill_talk                          0          0    10.72 8.603      .4989   
+   msc:Session1Self                            0          0    11.82 9.193      .4933   
+   msc_dialogue_2                        .000253   .0007591    10.14 7.945      .5062   
+   msc_dialogue_3                       .0005061    .006326    10.79 8.104      .5027   
+   msc_dialogue_4                              0          0    7.364 5.977      .5622   
+   msc_dialogue_6                              0          0    8.165 6.271      .5542   
+                             token_em  total_train_updates  tpb   tps  ul_loss  \
+   WizInternetWizardTeacher  .0005051                                            
+   all                        .000289                 6924 1139 789.3    1.053   
+   blended_skill_talk               0                                            
+   msc:Session1Self           .001518                                            
+   msc_dialogue_2                   0                                            
+   msc_dialogue_3                   0                                            
+   msc_dialogue_4                   0                                            
+   msc_dialogue_6                   0                                    1.053   
+                             ul_ppl   ups  
+   WizInternetWizardTeacher                
+   all                        8.231 .6928  
+   blended_skill_talk                      
+   msc:Session1Self                        
+   msc_dialogue_2                          
+   msc_dialogue_3                          
+   msc_dialogue_4                          
+   msc_dialogue_6             8.231
+
+2022-10-20 04:14:20,114 INFO     | running eval: valid
+2022-10-20 04:16:15,710 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 04:16:15,710 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+5897
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+5890
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+5904
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+839
+2022-10-20 04:33:58,781 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 04:36:10,897 INFO     | eval completed in 1310.78s
+2022-10-20 04:36:10,897 REPORT   | valid:
+                             clen  ctpb  ctps  ctrunc  ctrunclen  exps   exs  gpu_mem  \
+   WizInternetWizardTeacher 162.3               .5429      62.98        2881            
+   all                      458.6 940.8  5756   .8023      339.7  48.9 34863    .5455   
+   blended_skill_talk         181               .6944      63.33        5651            
+   msc:Session1Self         182.6               .7182      63.81        7801            
+   msc_dialogue_2             424                   1        296        5897            
+   msc_dialogue_3           816.6                   1      688.6        5890            
+   msc_dialogue_4            1212                   1       1084        5904            
+   msc_dialogue_6           231.8               .6603      119.1         839            
+                             llen  loss       lr  ltpb  ltps   ltrunc  ltrunclen  \
+   WizInternetWizardTeacher 27.05 2.304                        .00243      .1184   
+   all                      25.01 2.245 4.95e-06 153.3   938 .0005408     .02013   
+   blended_skill_talk       19.18 2.376                             0          0   
+   msc:Session1Self         14.41 2.333                             0          0   
+   msc_dialogue_2           31.52 2.251                      .0006783     .01543   
+   msc_dialogue_3           31.57  2.24                      .0001698    .005433   
+   msc_dialogue_4           32.38 2.257                      .0005081    .001694   
+   msc_dialogue_6           18.96 1.954                             0          0   
+                             mle_ppl   ppl  token_acc  token_em  total_train_updates  \
+   WizInternetWizardTeacher    12.26 10.01      .4928         0                        
+   all                         13.23 9.513      .4867 6.191e-05                 6924   
+   blended_skill_talk          14.87 10.77      .4642   .000177                        
+   msc:Session1Self            18.34 10.31      .4769  .0002564                        
+   msc_dialogue_2              12.34 9.496      .4783         0                        
+   msc_dialogue_3              12.26 9.395      .4777         0                        
+   msc_dialogue_4              12.82 9.555      .4745         0                        
+   msc_dialogue_6              9.719 7.056      .5429         0                        
+                             tpb  tps  ul_loss  ul_ppl  
+   WizInternetWizardTeacher                             
+   all                      1094 6694    1.031   10.98  
+   blended_skill_talk                                   
+   msc:Session1Self                                     
+   msc_dialogue_2                                       
+   msc_dialogue_3                                       
+   msc_dialogue_4                                       
+   msc_dialogue_6                        1.031   10.98
+
+2022-10-20 04:36:10,897 SUCCESS  | new best ppl: 9.513 (previous best was 9.543)
+2022-10-20 04:36:10,897 INFO     | saving best valid model: ./checkpoints/all/model
+2022-10-20 04:36:30,694 INFO     | saving model checkpoint: ./checkpoints/all/model.checkpoint
+2022-10-20 05:27:36,780 INFO     | Overflow: setting loss scale to 8.0
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+11870
+2022-10-20 05:28:24,117 INFO     | time:16358s total_exs:83088 total_steps:10386 epochs:0.27 time_left:3068660s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher 129.8                     .4114      37.42        3952   
+   all                      447.4 .9997 941.5  1052   .7823      329.7 8.942 27696   
+   blended_skill_talk       180.7                     .6931      63.29        3952   
+   msc:Session1Self         167.9                     .6639      52.23        3960   
+   msc_dialogue_2           398.1                         1      270.1        3960   
+   msc_dialogue_3             798                         1        670        3960   
+   msc_dialogue_4            1213                         1       1085        3960   
+   msc_dialogue_6           244.8                     .7075      130.6        3952   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   21.34 2.029            
+   all                                  8.492  10.87    .6046 24.37 2.015 4.95e-06   
+   blended_skill_talk                                         19.15 2.152            
+   msc:Session1Self                                           13.95 2.199            
+   msc_dialogue_2                                             30.97 2.063            
+   msc_dialogue_3                                             32.43 2.093            
+   msc_dialogue_4                                             32.04 1.786            
+   msc_dialogue_6                                             20.74 1.783            
+                             ltpb  ltps   ltrunc  ltrunclen  mle_ppl   ppl  token_acc  \
+   WizInternetWizardTeacher              .000253     .01189     9.18 7.604      .5386   
+   all                        195 217.9 .0002165    .005775     9.69 7.587      .5245   
+   blended_skill_talk                          0          0    11.05   8.6      .4989   
+   msc:Session1Self                            0          0     12.4 9.013      .4978   
+   msc_dialogue_2                       .0005051     .02222    9.541 7.868      .5098   
+   msc_dialogue_3                       .0007576    .006313    11.81  8.11      .5013   
+   msc_dialogue_4                              0          0    6.956 5.967      .5608   
+   msc_dialogue_6                              0          0    6.892 5.948      .5640   
+                             token_em  total_train_updates  tpb  tps  ul_loss  ul_ppl  \
+   WizInternetWizardTeacher   .000253                                                   
+   all                       .0002167                10386 1136 1270    .8719   10.55   
+   blended_skill_talk               0                                                   
+   msc:Session1Self          .0007576                                                   
+   msc_dialogue_2                   0                                                   
+   msc_dialogue_3                   0                                                   
+   msc_dialogue_4                   0                                                   
+   msc_dialogue_6            .0005061                                   .8719   10.55   
+                              ups  
+   WizInternetWizardTeacher        
+   all                      1.118  
+   blended_skill_talk              
+   msc:Session1Self                
+   msc_dialogue_2                  
+   msc_dialogue_3                  
+   msc_dialogue_4                  
+   msc_dialogue_6
+
+2022-10-20 05:28:24,117 INFO     | running eval: valid
+2022-10-20 05:30:19,742 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 05:30:19,742 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+5897
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+5890
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+5904
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+839
+2022-10-20 05:47:59,973 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 05:50:12,179 INFO     | eval completed in 1308.06s
+2022-10-20 05:50:12,179 REPORT   | valid:
+                             clen  ctpb  ctps  ctrunc  ctrunclen  exps   exs  gpu_mem  \
+   WizInternetWizardTeacher 162.3               .5429      62.98        2881            
+   all                      458.6 940.8  5754   .8023      339.7 48.89 34863    .5455   
+   blended_skill_talk         181               .6944      63.33        5651            
+   msc:Session1Self         182.6               .7182      63.81        7801            
+   msc_dialogue_2             424                   1        296        5897            
+   msc_dialogue_3           816.6                   1      688.6        5890            
+   msc_dialogue_4            1212                   1       1084        5904            
+   msc_dialogue_6           231.8               .6603      119.1         839            
+                             llen  loss       lr  ltpb  ltps   ltrunc  ltrunclen  \
+   WizInternetWizardTeacher 27.05 2.307                        .00243      .1184   
+   all                      25.01 2.243 4.95e-06 153.3 937.8 .0005408     .02013   
+   blended_skill_talk       19.18 2.373                             0          0   
+   msc:Session1Self         14.41 2.326                             0          0   
+   msc_dialogue_2           31.52 2.248                      .0006783     .01543   
+   msc_dialogue_3           31.57 2.237                      .0001698    .005433   
+   msc_dialogue_4           32.38 2.255                      .0005081    .001694   
+   msc_dialogue_6           18.96  1.96                             0          0   
+                             mle_ppl   ppl  token_acc  token_em  total_train_updates  \
+   WizInternetWizardTeacher    12.31 10.04      .4923         0                        
+   all                         13.73 9.495      .4867         0                10386   
+   blended_skill_talk          14.96 10.73      .4651         0                        
+   msc:Session1Self             20.4 10.24      .4787         0                        
+   msc_dialogue_2              12.44 9.465      .4786         0                        
+   msc_dialogue_3              12.45 9.365      .4782         0                        
+   msc_dialogue_4              13.11 9.535      .4749         0                        
+   msc_dialogue_6              10.42 7.096      .5388         0                        
+                             tpb  tps  ul_loss  ul_ppl  
+   WizInternetWizardTeacher                             
+   all                      1094 6692    .9988   18.74  
+   blended_skill_talk                                   
+   msc:Session1Self                                     
+   msc_dialogue_2                                       
+   msc_dialogue_3                                       
+   msc_dialogue_4                                       
+   msc_dialogue_6                        .9988   18.74
+
+2022-10-20 05:50:12,179 SUCCESS  | new best ppl: 9.495 (previous best was 9.513)
+2022-10-20 05:50:12,179 INFO     | saving best valid model: ./checkpoints/all/model
+2022-10-20 05:50:30,587 INFO     | saving model checkpoint: ./checkpoints/all/model.checkpoint
+2022-10-20 06:19:03,196 INFO     | Overflow: setting loss scale to 4.0
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+7915
+2022-10-20 06:42:23,827 INFO     | time:20798s total_exs:110784 total_steps:13848 epochs:0.35 time_left:2920939s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher   128                     .4093         36        3960   
+   all                        447 .9997 942.8  1055   .7847      329.1 8.953 27696   
+   blended_skill_talk       179.1                     .6826      61.63        3960   
+   msc:Session1Self         168.1                     .6689      52.16        3960   
+   msc_dialogue_2             400                         1        272        3952   
+   msc_dialogue_3           789.7                         1      661.7        3952   
+   msc_dialogue_4            1212                         1       1084        3952   
+   msc_dialogue_6           251.3                     .7318      135.8        3960   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   21.48 2.036            
+   all                                  6.184  11.34    .6060  24.6 1.993 4.95e-06   
+   blended_skill_talk                                            19 2.153            
+   msc:Session1Self                                           13.96 2.183            
+   msc_dialogue_2                                             31.93 2.064            
+   msc_dialogue_3                                             32.31 2.111            
+   msc_dialogue_4                                             32.29 1.647            
+   msc_dialogue_6                                              21.2 1.757            
+                             ltpb  ltps   ltrunc  ltrunclen  mle_ppl   ppl  token_acc  \
+   WizInternetWizardTeacher                    0          0    9.257 7.662      .5346   
+   all                      196.7 220.1 .0001807    .002024    9.419 7.466      .5284   
+   blended_skill_talk                          0          0    13.17  8.61      .4988   
+   msc:Session1Self                            0          0     10.6 8.876      .4973   
+   msc_dialogue_2                       .0005061     .01113    9.286 7.875      .5082   
+   msc_dialogue_3                        .000253   .0007591    10.78 8.256      .4983   
+   msc_dialogue_4                       .0005061    .002277     6.68 5.189      .5917   
+   msc_dialogue_6                              0          0    6.172 5.798      .5701   
+                             token_em  total_train_updates  tpb  tps  ul_loss  ul_ppl  \
+   WizInternetWizardTeacher  .0005051                                                   
+   all                       .0002525                13848 1139 1275    .8034    13.8   
+   blended_skill_talk               0                                                   
+   msc:Session1Self            .00101                                                   
+   msc_dialogue_2                   0                                                   
+   msc_dialogue_3                   0                                                   
+   msc_dialogue_4                   0                                                   
+   msc_dialogue_6            .0002525                                   .8034    13.8   
+                              ups  
+   WizInternetWizardTeacher        
+   all                      1.119  
+   blended_skill_talk              
+   msc:Session1Self                
+   msc_dialogue_2                  
+   msc_dialogue_3                  
+   msc_dialogue_4                  
+   msc_dialogue_6
+
+2022-10-20 06:42:23,827 INFO     | running eval: valid
+2022-10-20 06:44:18,780 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 06:44:18,781 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+5897
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+5890
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+5904
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+839
+2022-10-20 07:01:51,153 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 07:04:02,880 INFO     | eval completed in 1299.05s
+2022-10-20 07:04:02,880 REPORT   | valid:
+                             clen  ctpb  ctps  ctrunc  ctrunclen  exps   exs  gpu_mem  \
+   WizInternetWizardTeacher 162.3               .5429      62.98        2881            
+   all                      458.6 940.8  5788   .8023      339.7 49.17 34863    .5455   
+   blended_skill_talk         181               .6944      63.33        5651            
+   msc:Session1Self         182.6               .7182      63.81        7801            
+   msc_dialogue_2             424                   1        296        5897            
+   msc_dialogue_3           816.6                   1      688.6        5890            
+   msc_dialogue_4            1212                   1       1084        5904            
+   msc_dialogue_6           231.8               .6603      119.1         839            
+                             llen  loss       lr  ltpb  ltps   ltrunc  ltrunclen  \
+   WizInternetWizardTeacher 27.05 2.311                        .00243      .1184   
+   all                      25.01 2.249 4.95e-06 153.3 943.3 .0005408     .02013   
+   blended_skill_talk       19.18 2.374                             0          0   
+   msc:Session1Self         14.41 2.326                             0          0   
+   msc_dialogue_2           31.52 2.256                      .0006783     .01543   
+   msc_dialogue_3           31.57 2.248                      .0001698    .005433   
+   msc_dialogue_4           32.38 2.267                      .0005081    .001694   
+   msc_dialogue_6           18.96 1.963                             0          0   
+                             mle_ppl   ppl  token_acc  token_em  total_train_updates  \
+   WizInternetWizardTeacher    12.32 10.08      .4918         0                        
+   all                         13.65  9.55      .4853 2.528e-05                13848   
+   blended_skill_talk          14.62 10.74      .4644   .000177                        
+   msc:Session1Self            19.71 10.23      .4780         0                        
+   msc_dialogue_2              12.53 9.547      .4781         0                        
+   msc_dialogue_3              12.73 9.473      .4772         0                        
+   msc_dialogue_4              13.29 9.646      .4736         0                        
+   msc_dialogue_6              10.36 7.118      .5339         0                        
+                             tpb  tps  ul_loss  ul_ppl  
+   WizInternetWizardTeacher                             
+   all                      1094 6731    .9961   21.34  
+   blended_skill_talk                                   
+   msc:Session1Self                                     
+   msc_dialogue_2                                       
+   msc_dialogue_3                                       
+   msc_dialogue_4                                       
+   msc_dialogue_6                        .9961   21.34
+
+2022-10-20 07:04:02,881 REPORT   | did not beat best ppl: 9.495 impatience: 1
+2022-10-20 07:04:02,881 INFO     | saving model checkpoint: ./checkpoints/all/model.checkpoint
+2022-10-20 07:55:08,058 INFO     | Overflow: setting loss scale to 8.0
+2022-10-20 07:55:52,320 INFO     | time:25206s total_exs:138480 total_steps:17310 epochs:0.44 time_left:2827029s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher   125                     .3897      34.48        3952   
+   all                      445.7 .9997 939.2  1053   .7767      328.3 8.971 27696   
+   blended_skill_talk       179.1                     .6913      61.35        3952   
+   msc:Session1Self         165.2                     .6490      49.91        3952   
+   msc_dialogue_2           400.3                         1      272.3        3960   
+   msc_dialogue_3             793                         1        665        3960   
+   msc_dialogue_4            1213                         1       1085        3960   
+   msc_dialogue_6           244.7                     .7071      130.5        3960   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   21.52 2.045            
+   all                                  9.779  11.62    .6061 24.43 1.987 4.95e-06   
+   blended_skill_talk                                         18.77  2.14            
+   msc:Session1Self                                           13.81 2.185            
+   msc_dialogue_2                                             31.16 2.073            
+   msc_dialogue_3                                             32.74 2.119            
+   msc_dialogue_4                                             32.31 1.631            
+   msc_dialogue_6                                             20.73 1.717            
+                             ltpb  ltps   ltrunc  ltrunclen  mle_ppl   ppl  token_acc  \
+   WizInternetWizardTeacher             .0005061      .0210     8.58  7.73      .5364   
+   all                      195.4 219.1 .0001444     .01061    9.156 7.438      .5301   
+   blended_skill_talk                          0          0    10.51   8.5      .5016   
+   msc:Session1Self                            0          0    12.86 8.889      .4952   
+   msc_dialogue_2                       .0005051     .05328    9.842 7.951      .5069   
+   msc_dialogue_3                              0          0    10.82 8.319      .4969   
+   msc_dialogue_4                              0          0    6.071 5.111      .5954   
+   msc_dialogue_6                              0          0    5.412 5.565      .5784   
+                             token_em  total_train_updates  tpb  tps  ul_loss  ul_ppl  \
+   WizInternetWizardTeacher  .0007591                                                   
+   all                       .0004336                17310 1135 1272    .6741    21.1   
+   blended_skill_talk               0                                                   
+   msc:Session1Self           .001771                                                   
+   msc_dialogue_2                   0                                                   
+   msc_dialogue_3                   0                                                   
+   msc_dialogue_4                   0                                                   
+   msc_dialogue_6            .0005051                                   .6741    21.1   
+                              ups  
+   WizInternetWizardTeacher        
+   all                      1.121  
+   blended_skill_talk              
+   msc:Session1Self                
+   msc_dialogue_2                  
+   msc_dialogue_3                  
+   msc_dialogue_4                  
+   msc_dialogue_6
+
+2022-10-20 07:55:52,320 INFO     | running eval: valid
+2022-10-20 07:57:47,375 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 07:57:47,375 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+5897
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+5890
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+5904
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+839
+2022-10-20 08:15:18,193 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 08:17:32,261 INFO     | eval completed in 1299.94s
+2022-10-20 08:17:32,261 REPORT   | valid:
+                             clen  ctpb  ctps  ctrunc  ctrunclen  exps   exs  gpu_mem  \
+   WizInternetWizardTeacher 162.3               .5429      62.98        2881            
+   all                      458.6 940.8  5783   .8023      339.7 49.13 34863    .5456   
+   blended_skill_talk         181               .6944      63.33        5651            
+   msc:Session1Self         182.6               .7182      63.81        7801            
+   msc_dialogue_2             424                   1        296        5897            
+   msc_dialogue_3           816.6                   1      688.6        5890            
+   msc_dialogue_4            1212                   1       1084        5904            
+   msc_dialogue_6           231.8               .6603      119.1         839            
+                             llen  loss       lr  ltpb  ltps   ltrunc  ltrunclen  \
+   WizInternetWizardTeacher 27.05 2.306                        .00243      .1184   
+   all                      25.01 2.247 4.95e-06 153.3 942.4 .0005408     .02013   
+   blended_skill_talk       19.18  2.37                             0          0   
+   msc:Session1Self         14.41 2.322                             0          0   
+   msc_dialogue_2           31.52 2.253                      .0006783     .01543   
+   msc_dialogue_3           31.57 2.246                      .0001698    .005433   
+   msc_dialogue_4           32.38 2.265                      .0005081    .001694   
+   msc_dialogue_6           18.96 1.967                             0          0   
+                             mle_ppl   ppl  token_acc  token_em  total_train_updates  \
+   WizInternetWizardTeacher    12.47 10.04      .4920         0                        
+   all                         13.83 9.526      .4856 1.831e-05                17310   
+   blended_skill_talk          14.95  10.7      .4648         0                        
+   msc:Session1Self            19.58  10.2      .4791  .0001282                        
+   msc_dialogue_2              12.69 9.519      .4778         0                        
+   msc_dialogue_3              12.79 9.448      .4774         0                        
+   msc_dialogue_4              13.56 9.633      .4743         0                        
+   msc_dialogue_6              10.77  7.15      .5338         0                        
+                             tpb  tps  ul_loss  ul_ppl  
+   WizInternetWizardTeacher                             
+   all                      1094 6725    1.022   28.86  
+   blended_skill_talk                                   
+   msc:Session1Self                                     
+   msc_dialogue_2                                       
+   msc_dialogue_3                                       
+   msc_dialogue_4                                       
+   msc_dialogue_6                        1.022   28.86
+
+2022-10-20 08:17:32,261 REPORT   | did not beat best ppl: 9.495 impatience: 2
+2022-10-20 08:17:32,261 INFO     | saving model checkpoint: ./checkpoints/all/model.checkpoint
+2022-10-20 08:46:00,325 INFO     | Overflow: setting loss scale to 4.0
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+11870
+2022-10-20 09:09:16,591 INFO     | time:29611s total_exs:166176 total_steps:20772 epochs:0.53 time_left:2762559s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher 127.7                     .4088      36.03        3960   
+   all                      447.9 .9997 942.4  1059   .7845      330.1 8.987 27696   
+   blended_skill_talk       179.3                     .6972      61.77        3960   
+   msc:Session1Self           166                     .6528      50.22        3960   
+   msc_dialogue_2             403                         1        275        3960   
+   msc_dialogue_3             795                         1        667        3952   
+   msc_dialogue_4            1212                         1       1084        3952   
+   msc_dialogue_6           251.5                     .7325      135.9        3952   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   21.42 2.044            
+   all                                  6.183  11.85    .6048 24.54 1.981 4.95e-06   
+   blended_skill_talk                                         18.97 2.129            
+   msc:Session1Self                                           13.95 2.193            
+   msc_dialogue_2                                             31.25 2.065            
+   msc_dialogue_3                                             32.92 2.121            
+   msc_dialogue_4                                             32.05 1.626            
+   msc_dialogue_6                                             21.22  1.69            
+                             ltpb  ltps    ltrunc  ltrunclen  mle_ppl   ppl  \
+   WizInternetWizardTeacher                     0          0    9.926 7.724   
+   all                      196.3 220.5 3.615e-05   .0003615    10.18 7.404   
+   blended_skill_talk                           0          0     13.5  8.41   
+   msc:Session1Self                             0          0    16.34 8.963   
+   msc_dialogue_2                               0          0    10.04 7.885   
+   msc_dialogue_3                         .000253     .00253    10.78 8.341   
+   msc_dialogue_4                               0          0    5.777 5.083   
+   msc_dialogue_6                               0          0    4.905 5.419   
+                             token_acc  token_em  total_train_updates  tpb  tps  \
+   WizInternetWizardTeacher      .5361  .0005051                                  
+   all                           .5315   .000433                20772 1139 1279   
+   blended_skill_talk            .5042         0                                  
+   msc:Session1Self              .4978    .00202                                  
+   msc_dialogue_2                .5057         0                                  
+   msc_dialogue_3                .4973         0                                  
+   msc_dialogue_4                .5960         0                                  
+   msc_dialogue_6                .5835  .0005061                                  
+                             ul_loss  ul_ppl   ups  
+   WizInternetWizardTeacher                         
+   all                         .6257   30.01 1.123  
+   blended_skill_talk                               
+   msc:Session1Self                                 
+   msc_dialogue_2                                   
+   msc_dialogue_3                                   
+   msc_dialogue_4                                   
+   msc_dialogue_6              .6257   30.01
+
+2022-10-20 09:09:16,591 INFO     | running eval: valid
+2022-10-20 09:11:11,588 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 09:11:11,588 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+5897
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+5890
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+5904
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+839
+2022-10-20 09:28:47,206 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 09:30:59,783 INFO     | eval completed in 1303.19s
+2022-10-20 09:30:59,783 REPORT   | valid:
+                             clen  ctpb  ctps  ctrunc  ctrunclen  exps   exs  gpu_mem  \
+   WizInternetWizardTeacher 162.3               .5429      62.98        2881            
+   all                      458.6 940.8  5786   .8023      339.7 49.15 34863    .5455   
+   blended_skill_talk         181               .6944      63.33        5651            
+   msc:Session1Self         182.6               .7182      63.81        7801            
+   msc_dialogue_2             424                   1        296        5897            
+   msc_dialogue_3           816.6                   1      688.6        5890            
+   msc_dialogue_4            1212                   1       1084        5904            
+   msc_dialogue_6           231.8               .6603      119.1         839            
+                             llen  loss       lr  ltpb  ltps   ltrunc  ltrunclen  \
+   WizInternetWizardTeacher 27.05 2.309                        .00243      .1184   
+   all                      25.01 2.252 4.95e-06 153.3 942.9 .0005408     .02013   
+   blended_skill_talk       19.18 2.369                             0          0   
+   msc:Session1Self         14.41 2.321                             0          0   
+   msc_dialogue_2           31.52 2.258                      .0006783     .01543   
+   msc_dialogue_3           31.57 2.249                      .0001698    .005433   
+   msc_dialogue_4           32.38 2.268                      .0005081    .001694   
+   msc_dialogue_6           18.96 1.991                             0          0   
+                             mle_ppl   ppl  token_acc  token_em  total_train_updates  \
+   WizInternetWizardTeacher    12.44 10.06      .4914         0                        
+   all                         13.99 9.564      .4848         0                20772   
+   blended_skill_talk          15.05 10.69      .4653         0                        
+   msc:Session1Self            18.88 10.18      .4794         0                        
+   msc_dialogue_2              13.13 9.561      .4774         0                        
+   msc_dialogue_3              12.94 9.478      .4775         0                        
+   msc_dialogue_4              13.72 9.658      .4734         0                        
+   msc_dialogue_6              11.78 7.321      .5288         0                        
+                             tpb  tps  ul_loss  ul_ppl  
+   WizInternetWizardTeacher                             
+   all                      1094 6729    1.031   48.88  
+   blended_skill_talk                                   
+   msc:Session1Self                                     
+   msc_dialogue_2                                       
+   msc_dialogue_3                                       
+   msc_dialogue_4                                       
+   msc_dialogue_6                        1.031   48.88
+
+2022-10-20 09:30:59,783 REPORT   | did not beat best ppl: 9.495 impatience: 3
+2022-10-20 09:30:59,783 INFO     | saving model checkpoint: ./checkpoints/all/model.checkpoint
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+7915
+2022-10-20 10:22:06,563 INFO     | Overflow: setting loss scale to 8.0
+2022-10-20 10:22:52,231 INFO     | time:34026s total_exs:193872 total_steps:24234 epochs:0.62 time_left:2716158s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher 125.8                     .4126      33.34        3960   
+   all                      446.3 .9997 941.8  1054   .7806      328.6 8.952 27696   
+   blended_skill_talk       178.9                     .6860      61.76        3952   
+   msc:Session1Self         169.1                     .6589      52.88        3952   
+   msc_dialogue_2             400                         1        272        3952   
+   msc_dialogue_3           793.3                         1      665.3        3960   
+   msc_dialogue_4            1213                         1       1085        3960   
+   msc_dialogue_6           244.5                     .7066      130.4        3960   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   21.18 2.043            
+   all                                   9.78  12.27    .6059 24.48 1.957 4.95e-06   
+   blended_skill_talk                                         19.05 2.111            
+   msc:Session1Self                                           13.83 2.196            
+   msc_dialogue_2                                             31.37 2.069            
+   msc_dialogue_3                                             32.93 2.129            
+   msc_dialogue_4                                             32.29 1.497            
+   msc_dialogue_6                                             20.73 1.655            
+                             ltpb  ltps   ltrunc  ltrunclen  mle_ppl   ppl  token_acc  \
+   WizInternetWizardTeacher                    0          0    10.01 7.716      .5340   
+   all                      195.9 219.2 .0001805    .001083    9.852 7.283      .5365   
+   blended_skill_talk                          0          0    12.34 8.258      .5040   
+   msc:Session1Self                            0          0    14.12 8.986      .4974   
+   msc_dialogue_2                       .0005061    .003289    10.24 7.919      .5062   
+   msc_dialogue_3                       .0002525     .00202    12.26 8.405      .4945   
+   msc_dialogue_4                       .0005051    .002273    5.441 4.468      .6267   
+   msc_dialogue_6                              0          0    4.552 5.232      .5926   
+                             token_em  total_train_updates  tpb  tps  ul_loss  ul_ppl  \
+   WizInternetWizardTeacher   .001263                                                   
+   all                       .0003248                24234 1138 1273    .5272    48.4   
+   blended_skill_talk               0                                                   
+   msc:Session1Self          .0005061                                                   
+   msc_dialogue_2                   0                                                   
+   msc_dialogue_3                   0                                                   
+   msc_dialogue_4                   0                                                   
+   msc_dialogue_6            .0005051                                   .5272    48.4   
+                              ups  
+   WizInternetWizardTeacher        
+   all                      1.119  
+   blended_skill_talk              
+   msc:Session1Self                
+   msc_dialogue_2                  
+   msc_dialogue_3                  
+   msc_dialogue_4                  
+   msc_dialogue_6
+
+2022-10-20 10:22:52,231 INFO     | running eval: valid
+2022-10-20 10:24:46,659 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 10:24:46,659 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+5897
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+5890
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+5904
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+839
+2022-10-20 10:42:15,045 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 10:44:25,512 INFO     | eval completed in 1293.28s
+2022-10-20 10:44:25,512 REPORT   | valid:
+                             clen  ctpb  ctps  ctrunc  ctrunclen  exps   exs  gpu_mem  \
+   WizInternetWizardTeacher 162.3               .5429      62.98        2881            
+   all                      458.6 940.8  5814   .8023      339.7  49.4 34863    .5457   
+   blended_skill_talk         181               .6944      63.33        5651            
+   msc:Session1Self         182.6               .7182      63.81        7801            
+   msc_dialogue_2             424                   1        296        5897            
+   msc_dialogue_3           816.6                   1      688.6        5890            
+   msc_dialogue_4            1212                   1       1084        5904            
+   msc_dialogue_6           231.8               .6603      119.1         839            
+                             llen  loss       lr  ltpb  ltps   ltrunc  ltrunclen  \
+   WizInternetWizardTeacher 27.05 2.316                        .00243      .1184   
+   all                      25.01 2.262 4.95e-06 153.3 947.6 .0005408     .02013   
+   blended_skill_talk       19.18 2.374                             0          0   
+   msc:Session1Self         14.41 2.327                             0          0   
+   msc_dialogue_2           31.52  2.27                      .0006783     .01543   
+   msc_dialogue_3           31.57 2.264                      .0001698    .005433   
+   msc_dialogue_4           32.38 2.284                      .0005081    .001694   
+   msc_dialogue_6           18.96 1.998                             0          0   
+                             mle_ppl   ppl  token_acc  token_em  total_train_updates  \
+   WizInternetWizardTeacher    12.41 10.13      .4911         0                        
+   all                         14.26 9.658      .4835 1.831e-05                24234   
+   blended_skill_talk             15 10.75      .4651         0                        
+   msc:Session1Self            20.05 10.24      .4786  .0001282                        
+   msc_dialogue_2              13.25 9.679      .4756         0                        
+   msc_dialogue_3              13.22 9.618      .4754         0                        
+   msc_dialogue_4               13.8 9.817      .4722         0                        
+   msc_dialogue_6              12.05 7.373      .5265         0                        
+                             tpb  tps  ul_loss  ul_ppl  
+   WizInternetWizardTeacher                             
+   all                      1094 6762    1.058   54.33  
+   blended_skill_talk                                   
+   msc:Session1Self                                     
+   msc_dialogue_2                                       
+   msc_dialogue_3                                       
+   msc_dialogue_4                                       
+   msc_dialogue_6                        1.058   54.33
+
+2022-10-20 10:44:25,512 REPORT   | did not beat best ppl: 9.495 impatience: 4
+2022-10-20 10:44:25,512 INFO     | saving model checkpoint: ./checkpoints/all/model.checkpoint
+2022-10-20 11:36:30,106 INFO     | time:38444s total_exs:221568 total_steps:27696 epochs:0.71 time_left:2680410s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher 125.7                     .4076      34.36        3952   
+   all                      448.4     1 942.4  1052   .7852      330.6 8.927 27696   
+   blended_skill_talk       180.3                     .6843      62.96        3960   
+   msc:Session1Self         168.1                     .6725       51.7        3960   
+   msc_dialogue_2           402.4                         1      274.4        3960   
+   msc_dialogue_3           798.1                         1      670.1        3960   
+   msc_dialogue_4            1213                         1       1085        3952   
+   msc_dialogue_6           251.5                     .7323      135.9        3952   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   21.29 2.028            
+   all                                   11.5  12.59    .6055 24.56 1.926 4.95e-06   
+   blended_skill_talk                                         19.03 1.946            
+   msc:Session1Self                                           13.95 2.209            
+   msc_dialogue_2                                             31.47 2.077            
+   msc_dialogue_3                                             32.69 2.113            
+   msc_dialogue_4                                             32.29 1.475            
+   msc_dialogue_6                                             21.22 1.632            
+                             ltpb  ltps   ltrunc  ltrunclen  mle_ppl   ppl  token_acc  \
+   WizInternetWizardTeacher             .0005061    .005567    9.776 7.601      .5397   
+   all                      196.5 219.3 .0001805    .002166    8.731 7.064      .5436   
+   blended_skill_talk                          0          0    8.867 7.001      .5367   
+   msc:Session1Self                            0          0    10.75 9.105      .4961   
+   msc_dialogue_2                       .0005051    .006818    11.07 7.983      .5060   
+   msc_dialogue_3                       .0002525    .002778    11.46 8.272      .4975   
+   msc_dialogue_4                              0          0    4.984 4.372      .6317   
+   msc_dialogue_6                              0          0    4.197 5.116      .5974   
+                             token_em  total_train_updates  tpb  tps  ul_loss  ul_ppl  \
+   WizInternetWizardTeacher  .0005061                                                   
+   all                       .0005414                27696 1139 1271    .4906    51.3   
+   blended_skill_talk        .0002525                                                   
+   msc:Session1Self           .002525                                                   
+   msc_dialogue_2                   0                                                   
+   msc_dialogue_3                   0                                                   
+   msc_dialogue_4                   0                                                   
+   msc_dialogue_6            .0005061                                   .4906    51.3   
+                              ups  
+   WizInternetWizardTeacher        
+   all                      1.116  
+   blended_skill_talk              
+   msc:Session1Self                
+   msc_dialogue_2                  
+   msc_dialogue_3                  
+   msc_dialogue_4                  
+   msc_dialogue_6
+
+2022-10-20 11:36:30,107 INFO     | running eval: valid
+2022-10-20 11:38:25,241 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 11:38:25,242 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+5897
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+5890
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+5904
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+839
+2022-10-20 11:56:00,298 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 11:58:20,912 INFO     | eval completed in 1310.81s
+2022-10-20 11:58:20,912 REPORT   | valid:
+                             clen  ctpb  ctps  ctrunc  ctrunclen  exps   exs  gpu_mem  \
+   WizInternetWizardTeacher 162.3               .5429      62.98        2881            
+   all                      458.6 940.8  5779   .8023      339.7  49.1 34863    .5456   
+   blended_skill_talk         181               .6944      63.33        5651            
+   msc:Session1Self         182.6               .7182      63.81        7801            
+   msc_dialogue_2             424                   1        296        5897            
+   msc_dialogue_3           816.6                   1      688.6        5890            
+   msc_dialogue_4            1212                   1       1084        5904            
+   msc_dialogue_6           231.8               .6603      119.1         839            
+                             llen  loss       lr  ltpb  ltps   ltrunc  ltrunclen  \
+   WizInternetWizardTeacher 27.05 2.322                        .00243      .1184   
+   all                      25.01 2.269 4.95e-06 153.3 941.8 .0005408     .02013   
+   blended_skill_talk       19.18 2.383                             0          0   
+   msc:Session1Self         14.41 2.328                             0          0   
+   msc_dialogue_2           31.52 2.276                      .0006783     .01543   
+   msc_dialogue_3           31.57 2.272                      .0001698    .005433   
+   msc_dialogue_4           32.38 2.292                      .0005081    .001694   
+   msc_dialogue_6           18.96 2.006                             0          0   
+                             mle_ppl   ppl  token_acc  token_em  total_train_updates  \
+   WizInternetWizardTeacher     12.9  10.2      .4908         0                        
+   all                         15.14 9.724      .4828 3.663e-05                27696   
+   blended_skill_talk          15.97 10.84      .4640         0                        
+   msc:Session1Self            21.92 10.26      .4790  .0002564                        
+   msc_dialogue_2              13.71 9.737      .4756         0                        
+   msc_dialogue_3              13.94 9.701      .4744         0                        
+   msc_dialogue_4              14.61 9.899      .4709         0                        
+   msc_dialogue_6              12.97 7.431      .5248         0                        
+                             tpb  tps  ul_loss  ul_ppl  
+   WizInternetWizardTeacher                             
+   all                      1094 6721    1.076   64.05  
+   blended_skill_talk                                   
+   msc:Session1Self                                     
+   msc_dialogue_2                                       
+   msc_dialogue_3                                       
+   msc_dialogue_4                                       
+   msc_dialogue_6                        1.076   64.05
+
+2022-10-20 11:58:20,913 REPORT   | did not beat best ppl: 9.495 impatience: 5
+2022-10-20 11:58:20,913 INFO     | saving model checkpoint: ./checkpoints/all/model.checkpoint
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+7915
+2022-10-20 12:49:44,061 INFO     | Overflow: setting loss scale to 32.0
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+11870
+2022-10-20 12:50:24,990 INFO     | time:42879s total_exs:249264 total_steps:31158 epochs:0.80 time_left:2652676s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher   126                     .4010      34.24        3960   
+   all                      445.9 .9997 940.2  1051   .7776      328.4 8.941 27696   
+   blended_skill_talk       178.1                     .6851      60.97        3960   
+   msc:Session1Self         166.6                     .6498      50.95        3952   
+   msc_dialogue_2           400.9                         1      272.9        3952   
+   msc_dialogue_3           792.5                         1      664.5        3952   
+   msc_dialogue_4            1212                         1       1084        3960   
+   msc_dialogue_6           244.7                     .7071      130.5        3960   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   21.14 2.049            
+   all                                  38.35  12.81    .6023 24.41 1.918 4.95e-06   
+   blended_skill_talk                                         19.08 1.929            
+   msc:Session1Self                                           13.83 2.177            
+   msc_dialogue_2                                             31.37 2.075            
+   msc_dialogue_3                                             32.66 2.119            
+   msc_dialogue_4                                             32.06 1.467            
+   msc_dialogue_6                                             20.73 1.606            
+                             ltpb  ltps   ltrunc  ltrunclen  mle_ppl   ppl  token_acc  \
+   WizInternetWizardTeacher                    0          0    8.897 7.761      .5369   
+   all                      195.3 218.2 7.23e-05    .001374    9.097 7.011      .5458   
+   blended_skill_talk                          0          0     9.51 6.881      .5401   
+   msc:Session1Self                            0          0     14.6 8.823      .5019   
+   msc_dialogue_2                        .000253    .009362    10.11 7.968      .5061   
+   msc_dialogue_3                        .000253    .000253    11.84 8.327      .4962   
+   msc_dialogue_4                              0          0      4.7 4.336      .6334   
+   msc_dialogue_6                              0          0    4.031 4.981      .6057   
+                             token_em  total_train_updates  tpb  tps  ul_loss  ul_ppl  \
+   WizInternetWizardTeacher  .0005051                                                   
+   all                       .0008309                31158 1135 1269    .4186   65.51   
+   blended_skill_talk               0                                                   
+   msc:Session1Self           .003543                                                   
+   msc_dialogue_2             .000253                                                   
+   msc_dialogue_3             .000253                                                   
+   msc_dialogue_4            .0005051                                                   
+   msc_dialogue_6            .0007576                                   .4186   65.51   
+                              ups  
+   WizInternetWizardTeacher        
+   all                      1.118  
+   blended_skill_talk              
+   msc:Session1Self                
+   msc_dialogue_2                  
+   msc_dialogue_3                  
+   msc_dialogue_4                  
+   msc_dialogue_6
+
+2022-10-20 12:50:24,990 INFO     | running eval: valid
+2022-10-20 12:52:19,104 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 12:52:19,104 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+5897
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+5890
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+5904
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+839
+2022-10-20 13:09:50,754 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 13:12:02,062 INFO     | eval completed in 1297.07s
+2022-10-20 13:12:02,063 REPORT   | valid:
+                             clen  ctpb  ctps  ctrunc  ctrunclen  exps   exs  gpu_mem  \
+   WizInternetWizardTeacher 162.3               .5429      62.98        2881            
+   all                      458.6 940.8  5830   .8023      339.7 49.53 34863    .5457   
+   blended_skill_talk         181               .6944      63.33        5651            
+   msc:Session1Self         182.6               .7182      63.81        7801            
+   msc_dialogue_2             424                   1        296        5897            
+   msc_dialogue_3           816.6                   1      688.6        5890            
+   msc_dialogue_4            1212                   1       1084        5904            
+   msc_dialogue_6           231.8               .6603      119.1         839            
+                             llen  loss       lr  ltpb  ltps   ltrunc  ltrunclen  \
+   WizInternetWizardTeacher 27.05 2.325                        .00243      .1184   
+   all                      25.01 2.271 4.95e-06 153.3 950.2 .0005408     .02013   
+   blended_skill_talk       19.18 2.384                             0          0   
+   msc:Session1Self         14.41 2.329                             0          0   
+   msc_dialogue_2           31.52 2.276                      .0006783     .01543   
+   msc_dialogue_3           31.57 2.271                      .0001698    .005433   
+   msc_dialogue_4           32.38 2.294                      .0005081    .001694   
+   msc_dialogue_6           18.96 2.015                             0          0   
+                             mle_ppl   ppl  token_acc  token_em  total_train_updates  \
+   WizInternetWizardTeacher    12.95 10.22      .4907         0                        
+   all                         15.43 9.741      .4829 6.191e-05                31158   
+   blended_skill_talk           16.5 10.85      .4642   .000177                        
+   msc:Session1Self            22.86 10.27      .4796  .0002564                        
+   msc_dialogue_2              13.79  9.74      .4756         0                        
+   msc_dialogue_3              13.67 9.691      .4748         0                        
+   msc_dialogue_4              14.67 9.915      .4707         0                        
+   msc_dialogue_6              13.57 7.501      .5244         0                        
+                             tpb  tps  ul_loss  ul_ppl  
+   WizInternetWizardTeacher                             
+   all                      1094 6781    1.094   70.33  
+   blended_skill_talk                                   
+   msc:Session1Self                                     
+   msc_dialogue_2                                       
+   msc_dialogue_3                                       
+   msc_dialogue_4                                       
+   msc_dialogue_6                        1.094   70.33
+
+2022-10-20 13:12:02,063 REPORT   | did not beat best ppl: 9.495 impatience: 6
+2022-10-20 13:12:02,063 INFO     | saving model checkpoint: ./checkpoints/all/model.checkpoint
+2022-10-20 13:40:38,721 INFO     | Overflow: setting loss scale to 16.0
+2022-10-20 14:03:58,721 INFO     | time:47293s total_exs:276960 total_steps:34620 epochs:0.88 time_left:2628426s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher 125.4                     .4076      33.51        3952   
+   all                      448.4 .9997   943  1055   .7852      330.5 8.951 27696   
+   blended_skill_talk       181.2                     .6915      63.65        3952   
+   msc:Session1Self         168.2                     .6657      52.03        3960   
+   msc_dialogue_2           404.2                         1      276.2        3960   
+   msc_dialogue_3           796.1                         1      668.1        3960   
+   msc_dialogue_4            1212                         1       1084        3960   
+   msc_dialogue_6           251.2                     .7318      135.6        3952   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   21.11 2.057            
+   all                                  24.75  13.21    .6036 24.59 1.904 4.95e-06   
+   blended_skill_talk                                         19.15 1.936            
+   msc:Session1Self                                           13.91 2.198            
+   msc_dialogue_2                                             31.52 2.084            
+   msc_dialogue_3                                             32.94 2.127            
+   msc_dialogue_4                                             32.29 1.345            
+   msc_dialogue_6                                              21.2 1.584            
+                             ltpb  ltps   ltrunc  ltrunclen  mle_ppl   ppl  token_acc  \
+   WizInternetWizardTeacher                    0          0    10.28 7.819      .5347   
+   all                      196.7 220.1 .0001804    .001479    8.851 6.985      .5498   
+   blended_skill_talk                          0          0    7.785 6.931      .5401   
+   msc:Session1Self                            0          0    13.03 9.004      .4966   
+   msc_dialogue_2                       .0005051    .004798    10.95 8.036      .5059   
+   msc_dialogue_3                       .0002525    .003283     11.9 8.393      .4963   
+   msc_dialogue_4                       .0005051    .002273    4.301 3.837      .6656   
+   msc_dialogue_6                              0          0    3.715 4.873      .6093   
+                             token_em  total_train_updates  tpb  tps  ul_loss  ul_ppl  \
+   WizInternetWizardTeacher   .001012                                                   
+   all                       .0003613                34620 1140 1275    .3917   77.41   
+   blended_skill_talk               0                                                   
+   msc:Session1Self          .0005051                                                   
+   msc_dialogue_2                   0                                                   
+   msc_dialogue_3                   0                                                   
+   msc_dialogue_4            .0002525                                                   
+   msc_dialogue_6            .0007591                                   .3917   77.41   
+                              ups  
+   WizInternetWizardTeacher        
+   all                      1.119  
+   blended_skill_talk              
+   msc:Session1Self                
+   msc_dialogue_2                  
+   msc_dialogue_3                  
+   msc_dialogue_4                  
+   msc_dialogue_6
+
+2022-10-20 14:03:58,721 INFO     | running eval: valid
+2022-10-20 14:05:53,358 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 14:05:53,359 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+5897
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+5890
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+5904
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+839
+2022-10-20 14:23:22,436 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 14:25:32,831 INFO     | eval completed in 1294.11s
+2022-10-20 14:25:32,831 REPORT   | valid:
+                             clen  ctpb  ctps  ctrunc  ctrunclen  exps   exs  gpu_mem  \
+   WizInternetWizardTeacher 162.3               .5429      62.98        2881            
+   all                      458.6 940.8  5804   .8023      339.7 49.31 34863    .5457   
+   blended_skill_talk         181               .6944      63.33        5651            
+   msc:Session1Self         182.6               .7182      63.81        7801            
+   msc_dialogue_2             424                   1        296        5897            
+   msc_dialogue_3           816.6                   1      688.6        5890            
+   msc_dialogue_4            1212                   1       1084        5904            
+   msc_dialogue_6           231.8               .6603      119.1         839            
+                             llen  loss       lr  ltpb  ltps   ltrunc  ltrunclen  \
+   WizInternetWizardTeacher 27.05 2.325                        .00243      .1184   
+   all                      25.01 2.278 4.95e-06 153.3 945.9 .0005408     .02013   
+   blended_skill_talk       19.18 2.389                             0          0   
+   msc:Session1Self         14.41 2.323                             0          0   
+   msc_dialogue_2           31.52 2.287                      .0006783     .01543   
+   msc_dialogue_3           31.57 2.286                      .0001698    .005433   
+   msc_dialogue_4           32.38 2.311                      .0005081    .001694   
+   msc_dialogue_6           18.96 2.024                             0          0   
+                             mle_ppl   ppl  token_acc  token_em  total_train_updates  \
+   WizInternetWizardTeacher    12.81 10.23      .4897         0                        
+   all                         15.41 9.811      .4820 6.191e-05                34620   
+   blended_skill_talk          16.16  10.9      .4637   .000177                        
+   msc:Session1Self            20.76 10.21      .4801  .0002564                        
+   msc_dialogue_2              14.29 9.843      .4753         0                        
+   msc_dialogue_3              14.56 9.839      .4732         0                        
+   msc_dialogue_4              15.03 10.08      .4693         0                        
+   msc_dialogue_6               14.3 7.565      .5226         0                        
+                             tpb  tps  ul_loss  ul_ppl  
+   WizInternetWizardTeacher                             
+   all                      1094 6750     1.12   89.94  
+   blended_skill_talk                                   
+   msc:Session1Self                                     
+   msc_dialogue_2                                       
+   msc_dialogue_3                                       
+   msc_dialogue_4                                       
+   msc_dialogue_6                         1.12   89.94
+
+2022-10-20 14:25:32,831 REPORT   | did not beat best ppl: 9.495 impatience: 7
+2022-10-20 14:25:32,831 INFO     | saving model checkpoint: ./checkpoints/all/model.checkpoint
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+7915
+2022-10-20 14:50:49,886 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/train.jsonl ...
+WOI: 41476
+2022-10-20 15:18:39,525 INFO     | time:51773s total_exs:304656 total_steps:38082 epochs:0.97 time_left:2611166s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher 128.4                     .4197      35.66        3960   
+   all                      446.7     1 941.7  1031   .7821        329 8.762 27696   
+   blended_skill_talk         178                     .6833      60.58        3960   
+   msc:Session1Self         168.2                     .6649      52.57        3960   
+   msc_dialogue_2             400                         1        272        3952   
+   msc_dialogue_3           794.9                         1      666.9        3952   
+   msc_dialogue_4            1213                         1       1085        3952   
+   msc_dialogue_6           244.8                     .7071      130.6        3960   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   20.99 1.955            
+   all                                  39.52  13.52    .6039 24.38 1.882 4.95e-06   
+   blended_skill_talk                                         18.88  1.92            
+   msc:Session1Self                                           13.87 2.212            
+   msc_dialogue_2                                             31.12 2.076            
+   msc_dialogue_3                                             32.74 2.131            
+   msc_dialogue_4                                             32.29 1.321            
+   msc_dialogue_6                                             20.74 1.562            
+                             ltpb  ltps    ltrunc  ltrunclen  mle_ppl   ppl  \
+   WizInternetWizardTeacher                     0          0     8.48 7.062   
+   all                      194.9 213.5 3.615e-05   .0006145    8.471 6.847   
+   blended_skill_talk                           0          0    9.582 6.824   
+   msc:Session1Self                             0          0    11.68 9.132   
+   msc_dialogue_2                         .000253    .004302    9.687  7.97   
+   msc_dialogue_3                               0          0    12.03 8.424   
+   msc_dialogue_4                               0          0    4.091 3.748   
+   msc_dialogue_6                               0          0    3.747 4.768   
+                             token_acc  token_em  total_train_updates  tpb  tps  \
+   WizInternetWizardTeacher      .5483  .0005051                                  
+   all                           .5540   .000469                38082 1137 1245   
+   blended_skill_talk            .5430         0                                  
+   msc:Session1Self              .4952   .002273                                  
+   msc_dialogue_2                .5092   .000253                                  
+   msc_dialogue_3                .4963         0                                  
+   msc_dialogue_4                .6707         0                                  
+   msc_dialogue_6                .6156  .0002525                                  
+                             ul_loss  ul_ppl   ups  
+   WizInternetWizardTeacher                         
+   all                         .3375   95.91 1.095  
+   blended_skill_talk                               
+   msc:Session1Self                                 
+   msc_dialogue_2                                   
+   msc_dialogue_3                                   
+   msc_dialogue_4                                   
+   msc_dialogue_6              .3375   95.91
+
+2022-10-20 15:18:39,525 INFO     | running eval: valid
+2022-10-20 15:20:34,832 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 15:20:34,832 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+5897
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+5890
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+5904
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+839
+2022-10-20 15:38:11,782 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 15:40:50,008 INFO     | eval completed in 1330.48s
+2022-10-20 15:40:50,008 REPORT   | valid:
+                             clen  ctpb  ctps  ctrunc  ctrunclen  exps   exs  gpu_mem  \
+   WizInternetWizardTeacher 162.3               .5429      62.98        2881            
+   all                      458.6 940.8  5770   .8023      339.7 49.02 34863    .5458   
+   blended_skill_talk         181               .6944      63.33        5651            
+   msc:Session1Self         182.6               .7182      63.81        7801            
+   msc_dialogue_2             424                   1        296        5897            
+   msc_dialogue_3           816.6                   1      688.6        5890            
+   msc_dialogue_4            1212                   1       1084        5904            
+   msc_dialogue_6           231.8               .6603      119.1         839            
+                             llen  loss       lr  ltpb  ltps   ltrunc  ltrunclen  \
+   WizInternetWizardTeacher 27.05 2.342                        .00243      .1184   
+   all                      25.01 2.285 4.95e-06 153.3 940.4 .0005408     .02013   
+   blended_skill_talk       19.18 2.398                             0          0   
+   msc:Session1Self         14.41  2.33                             0          0   
+   msc_dialogue_2           31.52  2.29                      .0006783     .01543   
+   msc_dialogue_3           31.57 2.294                      .0001698    .005433   
+   msc_dialogue_4           32.38  2.32                      .0005081    .001694   
+   msc_dialogue_6           18.96 2.021                             0          0   
+                             mle_ppl   ppl  token_acc  token_em  total_train_updates  \
+   WizInternetWizardTeacher    13.21  10.4      .4884         0                        
+   all                         15.73 9.885      .4814 5.494e-05                38082   
+   blended_skill_talk          16.72    11      .4632         0                        
+   msc:Session1Self            21.25 10.27      .4793  .0003846                        
+   msc_dialogue_2              14.25 9.879      .4736         0                        
+   msc_dialogue_3              14.69 9.914      .4718         0                        
+   msc_dialogue_4              15.47 10.18      .4683         0                        
+   msc_dialogue_6              14.51 7.548      .5249         0                        
+                             tpb  tps  ul_loss  ul_ppl  
+   WizInternetWizardTeacher                             
+   all                      1094 6711    1.148   83.41  
+   blended_skill_talk                                   
+   msc:Session1Self                                     
+   msc_dialogue_2                                       
+   msc_dialogue_3                                       
+   msc_dialogue_4                                       
+   msc_dialogue_6                        1.148   83.41
+
+2022-10-20 15:40:50,008 REPORT   | did not beat best ppl: 9.495 impatience: 8
+2022-10-20 15:40:50,008 INFO     | saving model checkpoint: ./checkpoints/all/model.checkpoint
+2022-10-20 15:49:53,148 INFO     | Overflow: setting loss scale to 32.0
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+46420
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+47259
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+11870
+2022-10-20 16:33:17,656 INFO     | time:56252s total_exs:332352 total_steps:41544 epochs:1.06 time_left:2595912s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher 127.6                     .4122      36.01        3952   
+   all                      447.9 .9997 942.3  1045   .7853      330.1 8.869 27696   
+   blended_skill_talk       179.9                     .6923      62.22        3952   
+   msc:Session1Self         167.7                     .6604      52.02        3952   
+   msc_dialogue_2           399.8                         1      271.8        3960   
+   msc_dialogue_3           796.5                         1      668.5        3960   
+   msc_dialogue_4            1213                         1       1085        3960   
+   msc_dialogue_6           251.4                     .7323      135.9        3960   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   21.53 1.869            
+   all                                  45.51  13.62    .6037 24.54 1.862 4.95e-06   
+   blended_skill_talk                                         18.85 1.919            
+   msc:Session1Self                                           13.86 2.194            
+   msc_dialogue_2                                             31.23 2.053            
+   msc_dialogue_3                                             33.06 2.145            
+   msc_dialogue_4                                             32.06  1.31            
+   msc_dialogue_6                                             21.21  1.54            
+                             ltpb  ltps   ltrunc  ltrunclen  mle_ppl   ppl  token_acc  \
+   WizInternetWizardTeacher              .000253    .000253    7.954 6.482      .5671   
+   all                      196.3 217.7 .0002165    .005159    8.322 6.711      .5581   
+   blended_skill_talk                          0          0    7.998 6.817      .5436   
+   msc:Session1Self                            0          0    13.01 8.973      .4957   
+   msc_dialogue_2                       .0002525      .0149    10.02 7.793      .5112   
+   msc_dialogue_3                         .00101     .02096    12.01  8.54      .4946   
+   msc_dialogue_4                              0          0    3.868 3.708      .6736   
+   msc_dialogue_6                              0          0    3.397 4.662      .6208   
+                             token_em  total_train_updates  tpb  tps  ul_loss  ul_ppl  \
+   WizInternetWizardTeacher   .001012                                                   
+   all                       .0005781                41544 1139 1262    .3165   88.12   
+   blended_skill_talk        .0005061                                                   
+   msc:Session1Self           .001518                                                   
+   msc_dialogue_2                   0                                                   
+   msc_dialogue_3                   0                                                   
+   msc_dialogue_4            .0005051                                                   
+   msc_dialogue_6            .0005051                                   .3165   88.12   
+                              ups  
+   WizInternetWizardTeacher        
+   all                      1.109  
+   blended_skill_talk              
+   msc:Session1Self                
+   msc_dialogue_2                  
+   msc_dialogue_3                  
+   msc_dialogue_4                  
+   msc_dialogue_6
+
+2022-10-20 16:33:17,656 INFO     | running eval: valid
+2022-10-20 16:35:12,810 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 16:35:12,811 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+CONV: 7801
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_2
+5897
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_3
+5890
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_4
+5904
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+839
+2022-10-20 16:53:02,875 INFO     | Loading data from ./ParlAI-1.6.0/data/wizard_of_interent/valid.jsonl ...
+WOI: 2881
+2022-10-20 16:55:16,285 INFO     | eval completed in 1318.63s
+2022-10-20 16:55:16,285 REPORT   | valid:
+                             clen  ctpb  ctps  ctrunc  ctrunclen  exps   exs  gpu_mem  \
+   WizInternetWizardTeacher 162.3               .5429      62.98        2881            
+   all                      458.6 940.8  5778   .8023      339.7 49.09 34863    .5456   
+   blended_skill_talk         181               .6944      63.33        5651            
+   msc:Session1Self         182.6               .7182      63.81        7801            
+   msc_dialogue_2             424                   1        296        5897            
+   msc_dialogue_3           816.6                   1      688.6        5890            
+   msc_dialogue_4            1212                   1       1084        5904            
+   msc_dialogue_6           231.8               .6603      119.1         839            
+                             llen  loss       lr  ltpb  ltps   ltrunc  ltrunclen  \
+   WizInternetWizardTeacher 27.05 2.356                        .00243      .1184   
+   all                      25.01 2.295 4.95e-06 153.3 941.6 .0005408     .02013   
+   blended_skill_talk       19.18 2.406                             0          0   
+   msc:Session1Self         14.41 2.331                             0          0   
+   msc_dialogue_2           31.52 2.301                      .0006783     .01543   
+   msc_dialogue_3           31.57 2.308                      .0001698    .005433   
+   msc_dialogue_4           32.38 2.336                      .0005081    .001694   
+   msc_dialogue_6           18.96 2.025                             0          0   
+                             mle_ppl   ppl  token_acc  token_em  total_train_updates  \
+   WizInternetWizardTeacher    13.45 10.55      .4876         0                        
+   all                         16.11 9.983      .4804 8.022e-05                41544   
+   blended_skill_talk          17.06 11.09      .4617   .000177                        
+   msc:Session1Self            21.86 10.28      .4797  .0003846                        
+   msc_dialogue_2              14.74 9.983      .4730         0                        
+   msc_dialogue_3              15.01 10.06      .4711         0                        
+   msc_dialogue_4              16.28 10.34      .4672         0                        
+   msc_dialogue_6               14.4 7.574      .5227         0                        
+                             tpb  tps  ul_loss  ul_ppl  
+   WizInternetWizardTeacher                             
+   all                      1094 6719    1.149   81.68  
+   blended_skill_talk                                   
+   msc:Session1Self                                     
+   msc_dialogue_2                                       
+   msc_dialogue_3                                       
+   msc_dialogue_4                                       
+   msc_dialogue_6                        1.149   81.68
+
+2022-10-20 16:55:16,285 REPORT   | did not beat best ppl: 9.495 impatience: 9
+2022-10-20 16:55:16,285 INFO     | saving model checkpoint: ./checkpoints/all/model.checkpoint
+loading: ./ParlAI-1.6.0/data/msc/msc/msc_dialogue/session_6
+7915
+2022-10-20 17:46:32,655 INFO     | Overflow: setting loss scale to 128.0
+2022-10-20 17:47:13,105 INFO     | time:60687s total_exs:360048 total_steps:45006 epochs:1.15 time_left:2580501s
+                             clen  clip  ctpb  ctps  ctrunc  ctrunclen  exps   exs  \
+   WizInternetWizardTeacher 131.9                     .4230      39.06        3960   
+   all                      447.6 .9997 942.1  1053   .7835      329.9 8.937 27696   
+   blended_skill_talk       179.1                     .6942      61.59        3960   
+   msc:Session1Self         167.1                     .6601      51.23        3960   
+   msc_dialogue_2           401.4                         1      273.4        3960   
+   msc_dialogue_3           796.7                         1      668.7        3952   
+   msc_dialogue_4            1213                         1       1085        3952   
+   msc_dialogue_6           244.7                     .7070      130.5        3952   
+                             fp16_loss_scalar  gnorm  gpu_mem  llen  loss       lr  \
+   WizInternetWizardTeacher                                   21.69 1.886            
+   all                                  118.5  13.82    .6059 24.59 1.794 4.95e-06   
+   blended_skill_talk                                         18.92 1.909            
+   msc:Session1Self                                           13.91 2.193            
+   msc_dialogue_2                                             31.51 1.903            
+   msc_dialogue_3                                             33.07 1.966            
+   msc_dialogue_4                                             32.28  1.18            
+   msc_dialogue_6                                             20.74 1.524            
+                             ltpb  ltps   ltrunc  ltrunclen  mle_ppl   ppl  token_acc  \
+   WizInternetWizardTeacher             .0002525     .01187    8.061 6.595      .5648   
+   all                      196.6 219.7 .0003612    .005489    8.878 6.285      .5718   
+   blended_skill_talk                          0          0    9.846 6.748      .5462   
+   msc:Session1Self                            0          0    17.45 8.963      .4953   
+   msc_dialogue_2                       .0007576    .008081    8.836 6.709      .5386   
+   msc_dialogue_3                        .001012     .01619    11.05 7.139      .5253   
+   msc_dialogue_4                       .0005061    .002277     3.47 3.253      .7073   
+   msc_dialogue_6                              0          0    3.432 4.589      .6250   
+                             token_em  total_train_updates  tpb  tps  ul_loss  ul_ppl  \
+   WizInternetWizardTeacher  .0007576                                                   
+   all                       .0004331                45006 1139 1272    .2696   104.2   
+   blended_skill_talk        .0002525                                                   
+   msc:Session1Self           .001263                                                   
+   msc_dialogue_2                   0                                                   
+   msc_dialogue_3                   0                                                   
+   msc_dialogue_4            .0005061                                                   
+   msc_dialogue_6             .000253                                   .2696   104.2   
+                              ups  
+   WizInternetWizardTeacher        
+   all                      1.117  
+   blended_skill_talk              
+   msc:Session1Self                
+   msc_dialogue_2                  
+   msc_dialogue_3                  
+   msc_dialogue_4                  
+   msc_dialogue_6
+
+2022-10-20 17:47:13,105 INFO     | running eval: valid
+2022-10-20 17:49:08,997 INFO     | loading normalized fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
+2022-10-20 17:49:08,997 INFO     | loading fbdialog data: ./ParlAI-1.6.0/data/ConvAI2/valid_self_original.txt
